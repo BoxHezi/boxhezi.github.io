@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <home-profile>
-      <template v-slot:name><h3>Boxuan Lu</h3></template>
+      <template v-slot:name><h2>Boxuan Lu</h2></template>
 
       <template v-slot:avatar>
         <img src="@/assets/img/box.jpg" alt="Box Hezi" />

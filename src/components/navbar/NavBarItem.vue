@@ -29,7 +29,7 @@ export default defineComponent({
   methods: {
     handleClick() {
       if (this.path !== null) {
-        this.$router.replace(this.path);
+        this.$router.push(this.path);
       }
     }
   }
