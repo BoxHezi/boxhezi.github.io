@@ -1,0 +1,18 @@
+@import url("https://fonts.google.com/specimen/Caveat?category=Handwriting");
+
+:root {
+  /* CSS HEX */
+  --xiketic: #171219;
+  --red-crayola: #ed254e;
+  --paolo-veronese-green: #169873;
+  --almond: #dcc9b6;
+  --timberwolf: #e4dfda;
+  --snow: #fffbfc;
+}
+
+body {
+  text-align: center;
+  font-family: "Caveat", cursive;
+  /* background-color: var(--snow); */
+  color: var(--snow);
+}
