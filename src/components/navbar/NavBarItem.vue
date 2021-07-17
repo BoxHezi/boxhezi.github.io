@@ -17,10 +17,10 @@ export default defineComponent({
       type: String
     }
   },
-  setup(props) {
-    const { path } = toRefs(props);
-    return { path };
-  },
+  // setup(props) {
+  //   const { path } = toRefs(props);
+  //   return { path };
+  // },
   computed: {
     isActive(): Boolean {
       return this.$route.path.indexOf(this.path) !== -1;
@@ -29,7 +29,7 @@ export default defineComponent({
   methods: {
     handleClick() {
       if (this.path !== null) {
-        this.$router.replace(this.path);
+        this.$router.push(this.path);
       }
     }
   }

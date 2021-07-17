@@ -33,12 +33,11 @@ function draw(letters: any, drops: any, canvas: any) {
     ctx.fillStyle = "#00ff00";
     ctx.fillText(text, i * 10, drops[i] * 10);
     drops[i]++;
-    if (drops[i] * 10 > canvas.height && Math.random() > .95) {
+    if (drops[i] * 10 > canvas.height && Math.random() > 0.95) {
       drops[i] = 0;
     }
   }
 }
-
 /**
  * Reference: https://codepen.io/yaclive/pen/EayLYO?editors=1111
  */

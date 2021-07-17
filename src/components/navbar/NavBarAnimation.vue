@@ -19,7 +19,10 @@ export default defineComponent({
     const commands: Array<String> = [
       "cat /etc/passwd",
       "cat /etc/shadow",
-      "sudo -l"
+      "sudo -l",
+      "sudo nmap -A localhost -p- -v",
+      "nc -lvnp 4444",
+      "msfconsole"
     ];
     let currentCommand = commands[0];
 
@@ -31,10 +34,13 @@ export default defineComponent({
     },
 
     startAnimation() {
+      let interval = 2000 + Math.floor(Math.random() * 1500);
       setInterval(() => {
+        interval = 2000 + Math.floor(Math.random() * 1500);
+        // console.log(interval);
         // console.log("Animation");
         this.currentCommand = this.commands[this.getNextIndex()];
-      }, 2000);
+      }, interval);
     },
 
     /**
