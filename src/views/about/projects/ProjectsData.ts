@@ -1,10 +1,3 @@
-export let projectsRecordsCN: Array<string> = [
-  "参与开发澳大利亚 Covid-19 信息追踪网站",
-  "Australia National Missing Person Hackathon",
-  "Cyber Security Challenge Australia 2018",
-  "2018 Downer Spotless Hack the city Hackathon",
-  "2018 PTC IoT/AR Hackathon"
-];
 export let projectsRecordsDetailCN: Record<string, Array<string>> = {
   "参与开发澳大利亚 Covid-19 信息追踪网站": [
     "https://covid-19-au.com/",
@@ -28,13 +21,6 @@ export let projectsRecordsDetailCN: Record<string, Array<string>> = {
   ]
 };
 
-export let projectsRecordsEN: Array<string> = [
-  "Australia Covid-19 Tracking Website",
-  "Australia National Missing Person Hackathon",
-  "Cyber Security Challenge Australia 2018",
-  "2018 Downer Spotless Hack the city Hackathon",
-  "2018 PTC IoT/AR Hackathon"
-];
 export let projectsRecordsDetailEN: Record<string, Array<string>> = {
   "Australia Covid-19 Tracking Website": [
     "Help to develop one Australia Covid-19 Tracking Website. https://covid-19-au.com/",

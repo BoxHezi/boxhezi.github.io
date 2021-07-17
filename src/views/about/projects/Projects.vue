@@ -3,29 +3,21 @@
     <div id="projects">
       <div id="projects-zh-section">
         <h3>项目</h3>
-        <div v-for="records in projectsRecordsCN" :key="records">
-          <h3>{{ records }}</h3>
-          <ul>
-            <ol v-for="value in getRecordDetail(records, true)" :key="value">
-              {{
-                value
-              }}
-            </ol>
-          </ul>
+        <div v-for="(value, key) in projectsRecordsDetailCN" :key="key">
+          <h3>{{ key }}</h3>
+          <ol>
+            <ul v-for="item in value" :key=item>{{item}}</ul>
+          </ol>
         </div>
       </div>
 
       <div id="projects-en-section">
         <h3>Projects</h3>
-        <div v-for="records in projectsRecordsEN" :key="records">
-          <h3>{{ records }}</h3>
-          <ul>
-            <ol v-for="value in getRecordDetail(records, false)" :key="value">
-              {{
-                value
-              }}
-            </ol>
-          </ul>
+        <div v-for="(value, key) in projectsRecordsDetailEN" :key="key">
+          <h3>{{ key }}</h3>
+          <ol>
+            <ul v-for="item in value" :key=item>{{item}}</ul>
+          </ol>
         </div>
       </div>
     </div>
@@ -36,9 +28,7 @@
 import { defineComponent } from "vue";
 
 import {
-  projectsRecordsCN,
   projectsRecordsDetailCN,
-  projectsRecordsEN,
   projectsRecordsDetailEN
 } from "./ProjectsData";
 
@@ -50,9 +40,7 @@ export default defineComponent({
     let detailArray: Array<string> = [];
 
     return {
-      projectsRecordsCN,
       projectsRecordsDetailCN,
-      projectsRecordsEN,
       projectsRecordsDetailEN,
       detailArray
     };

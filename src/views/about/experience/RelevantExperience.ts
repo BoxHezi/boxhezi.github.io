@@ -1,10 +1,3 @@
-export let relevantRecordsCN: Array<string> = [
-  "阿里巴巴 – 线上实习",
-  "网站后端开发实习 – 武汉找劳保网科技有限公司",
-  "讲师，学科面试官 – 海道（深圳）教育科技有限责任公司",
-  "线上客服 – 深圳市鹏亮工贸有限公司",
-  "志愿教学 – 深圳游子交流团"
-];
 export let relevantRecordsDetailCN: Record<string, Array<string>> = {
   "阿里巴巴 – 线上实习": [
     "阅读阿里巴巴 Java 开发手册，并将内容运用到项目前期的系统分析中。",
@@ -29,13 +22,6 @@ export let relevantRecordsDetailCN: Record<string, Array<string>> = {
   ]
 };
 
-export let relevantRecordsEN: Array<String> = [
-  "Alibaba one-month (remote) internship",
-  "Website back-end developer (internship)",
-  "Tutor, interviewer – HD Education",
-  "Online Sales",
-  "Volunteering Teaching"
-];
 export let relevantRecordsDetailEN: Record<string, Array<string>> = {
   "Alibaba one-month (remote) internship": [
     "Applying system analysis according to Alibaba’s java development manual",
