@@ -46,7 +46,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/contact",
     component: Contact
-  }
+  },
+  { path: "/flag", component: () => import("@/views/Flag.vue") }
 ];
 
 const router = createRouter({
