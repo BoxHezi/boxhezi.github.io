@@ -11,7 +11,7 @@ import { defineComponent } from "vue";
 import MainNavBar from "./components/navbar/MainNavBar.vue";
 import Home from "./views/home/Home.vue";
 
-import {defineCanvas, initAnimation} from "./Background";
+import { defineCanvas, initAnimation } from "./Background";
 
 export default defineComponent({
   name: "App",
@@ -39,11 +39,13 @@ export default defineComponent({
 @import "assets/css/base.css";
 
 canvas {
-  margin: 0 auto;
+  margin: 0;
   z-index: -100;
   background-color: #000000;
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
