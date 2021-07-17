@@ -22,29 +22,29 @@
     <div id="experience">
       <div id="experience-zh-section">
         <h3>经验</h3>
-        <div v-for="records in relevantRecordsCN" :key="records">
-          <h3>{{ records }}</h3>
-          <ul>
-            <ol v-for="value in getRecordDetail(records, true)" :key="value">
+        <div v-for="(value, key) in relevantRecordsDetailCN" :key="key">
+          <h3>{{ key }}</h3>
+          <ol>
+            <ul v-for="item in value" :key="item">
               {{
-                value
+                item
               }}
-            </ol>
-          </ul>
+            </ul>
+          </ol>
         </div>
       </div>
 
       <div id="experience-en-section">
         <h3>Experience</h3>
-        <div v-for="records in relevantRecordsEN" :key="records">
-          <h3>{{ records }}</h3>
-          <ul>
-            <ol v-for="value in getRecordDetail(records, false)" :key="value">
+        <div v-for="(value, key) in relevantRecordsDetailEN" :key="key">
+          <h3>{{ key }}</h3>
+          <ol>
+            <ul v-for="item in value" :key="item">
               {{
-                value
+                item
               }}
-            </ol>
-          </ul>
+            </ul>
+          </ol>
         </div>
       </div>
     </div>
@@ -56,9 +56,7 @@
 import { defineComponent } from "vue";
 
 import {
-  relevantRecordsCN,
   relevantRecordsDetailCN,
-  relevantRecordsEN,
   relevantRecordsDetailEN
 } from "./RelevantExperience";
 
@@ -70,22 +68,10 @@ export default defineComponent({
     let detailArray: Array<string> = [];
 
     return {
-      relevantRecordsCN,
       relevantRecordsDetailCN,
-      relevantRecordsEN,
       relevantRecordsDetailEN,
       detailArray
     };
-  },
-  methods: {
-    getRecordDetail(key: string, isCN: boolean) {
-      if (isCN) {
-        this.detailArray = relevantRecordsDetailCN[key];
-      } else {
-        this.detailArray = relevantRecordsDetailEN[key];
-      }
-      return this.detailArray;
-    }
   }
 });
 </script>
