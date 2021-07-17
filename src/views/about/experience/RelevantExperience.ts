@@ -1,9 +1,9 @@
 export let relevantRecordsCN: Array<string> = [
   "阿里巴巴 – 线上实习",
   "网站后端开发实习 – 武汉找劳保网科技有限公司",
-  // "讲师，学科面试官 – 海道（深圳）教育科技有限责任公司",
-  // "线上客服 – 深圳市鹏亮工贸有限公司",
-  // "志愿教学 – 深圳游子交流团"
+  "讲师，学科面试官 – 海道（深圳）教育科技有限责任公司",
+  "线上客服 – 深圳市鹏亮工贸有限公司",
+  "志愿教学 – 深圳游子交流团"
 ];
 export let relevantRecordsDetailCN: Record<string, Array<string>> = {
   "阿里巴巴 – 线上实习": [
@@ -31,7 +31,10 @@ export let relevantRecordsDetailCN: Record<string, Array<string>> = {
 
 export let relevantRecordsEN: Array<String> = [
   "Alibaba one-month (remote) internship",
-  "Website back-end developer (internship)"
+  "Website back-end developer (internship)",
+  "Tutor, interviewer – HD Education",
+  "Online Sales",
+  "Volunteering Teaching"
 ];
 export let relevantRecordsDetailEN: Record<string, Array<string>> = {
   "Alibaba one-month (remote) internship": [
@@ -42,5 +45,18 @@ export let relevantRecordsDetailEN: Record<string, Array<string>> = {
     "Website back-end developing using Java, SpringMVC, MySQL.",
     "Understanding and completing design brief within set time frames.",
     "Communicating with colleague and supervisor to ensure meet of requirements."
+  ],
+  "Tutor, interviewer – HD Education": [
+    "Teaching Java for beginners",
+    "Evaluating candidates teaching abilities; Giving professional advice."
+  ],
+  "Online Sales": [
+    "Answer customer queries online.",
+    "Helping customers identify the best products.",
+    "Helping customers identify the best products."
+  ],
+  "Volunteering Teaching": [
+    "Spent two weeks teaching for kids on west part of China, Gansu.",
+    "Working in a group to teach math and English to rural students."
   ]
 };

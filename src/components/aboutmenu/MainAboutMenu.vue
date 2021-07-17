@@ -1,21 +1,21 @@
 <template>
   <div>
     <about-menu>
-      <about-menu-item path="/about/introduction">
-        <template v-slot:option>Introduction</template>
+      <about-menu-item path="/about/experience">
+        <template v-slot:option>Experience</template>
       </about-menu-item>
 
-      <about-menu-item path="/about/writeups">
-        <template v-slot:option>WriteUps</template>
+      <about-menu-item path="/about/projects">
+        <template v-slot:option>Projects</template>
       </about-menu-item>
 
-      <about-menu-item path="/about/reading">
+      <!-- <about-menu-item path="/about/reading">
         <template v-slot:option>Reading</template>
       </about-menu-item>
 
       <about-menu-item path="/about/learning">
         <template v-slot:option>Learning</template>
-      </about-menu-item>
+      </about-menu-item> -->
     </about-menu>
   </div>
 </template>

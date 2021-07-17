@@ -1,9 +1,12 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 
 const Home = () => import("@/views/home/Home.vue");
+
 const About = () => import("@/views/about/About.vue");
+const AboutExp = () => import("@/views/about/experience/Experience.vue");
+const AboutProj = () => import("@/views/about/projects/Projects.vue");
+
 const Contact = () => import("@/views/contact/Contact.vue");
-const AboutIntro = () => import("@/views/about/introduction/Introduction.vue");
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -20,15 +23,15 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "",
-        redirect: "/about/introduction"
+        redirect: "/about/experience"
       },
       {
-        path: "introduction",
-        component: AboutIntro
+        path: "experience",
+        component: AboutExp
       },
       {
-        path: "writeups",
-        component: About
+        path: "projects",
+        component: AboutProj
       },
       {
         path: "reading",

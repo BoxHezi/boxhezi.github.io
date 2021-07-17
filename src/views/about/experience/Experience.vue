@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div class="container">
     <div id="introduction">
       <div id="name-intro">
         <h3>卢泊瑄</h3>
@@ -33,6 +33,7 @@
           </ul>
         </div>
       </div>
+
       <div id="experience-en-section">
         <h3>Experience</h3>
         <div v-for="records in relevantRecordsEN" :key="records">
@@ -45,16 +46,6 @@
             </ol>
           </ul>
         </div>
-      </div>
-    </div>
-    <hr />
-
-    <div id="projects">
-      <div id="projects-zh-section">
-        <h3>中文</h3>
-      </div>
-      <div id="projects-en-section">
-        <h3>English</h3>
       </div>
     </div>
     <hr />
