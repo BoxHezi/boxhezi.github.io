@@ -1,23 +1,23 @@
 <template>
-  <div id="nav-bar">
+  <div id="about-menu">
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/runtime-core";
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "NavBar"
+  setup() {
+    return {};
+  }
 });
 </script>
 
 <style scoped>
-#nav-bar {
-  height: 60px;
-  color: #ffffff;
+#about-menu {
   display: flex;
-  align-items: center;
+  justify-content: space-evenly;
   margin-bottom: 10px;
 }
 </style>

@@ -21,7 +21,8 @@ export default defineComponent({
       "cat /etc/shadow",
       "sudo -l",
       "sudo nmap -A localhost -p- -v",
-      "nc -lvnp 4444"
+      "nc -lvnp 4444",
+      "msfconsole"
     ];
     let currentCommand = commands[0];
 
@@ -36,7 +37,7 @@ export default defineComponent({
       let interval = 2000 + Math.floor(Math.random() * 1500);
       setInterval(() => {
         interval = 2000 + Math.floor(Math.random() * 1500);
-        console.log(interval);
+        // console.log(interval);
         // console.log("Animation");
         this.currentCommand = this.commands[this.getNextIndex()];
       }, interval);
