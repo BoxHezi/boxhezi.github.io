@@ -52,16 +52,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, onMounted } from "vue";
 
 import HomeProfile from "@/views/home/HomeProfile/HomeProfile.vue";
 import ProfileLinks from "./HomeProfile/ProfileLinks.vue";
 
 export default defineComponent({
   setup() {
-    let thm = ref();
-
-    return { thm };
   },
   components: {
     HomeProfile,
@@ -71,6 +68,12 @@ export default defineComponent({
 </script>
 
 <style scoped>
+#home {
+  width: 80%;
+  margin: 0 auto;
+  /* background-color: var(--background); */
+}
+
 img {
   width: 30%;
   height: 30%;

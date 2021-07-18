@@ -7,7 +7,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs } from "@vue/runtime-core";
+import { computed, defineComponent } from "@vue/runtime-core";
+import { useRoute, useRouter } from "vue-router";
 
 export default defineComponent({
   name: "NavBarItem",
@@ -17,21 +18,24 @@ export default defineComponent({
       type: String
     }
   },
-  // setup(props) {
-  //   const { path } = toRefs(props);
-  //   return { path };
-  // },
-  computed: {
-    isActive(): Boolean {
-      return this.$route.path.indexOf(this.path) !== -1;
-    }
-  },
-  methods: {
-    handleClick() {
-      if (this.path !== null) {
-        this.$router.push(this.path);
+  setup(props) {
+    const router = useRouter();
+    const route = useRoute();
+
+    let isActive = computed(() => {
+      return route.path.indexOf(props.path) !== -1;
+    });
+
+    function handleClick() {
+      if (route.path !== null) {
+        router.push(props.path);
       }
     }
+
+    return {
+      handleClick,
+      isActive
+    };
   }
 });
 </script>
@@ -40,6 +44,6 @@ export default defineComponent({
 .nav-bar-item {
   flex: 1;
   text-align: center;
-  color: white;
+  color: var(--snow);
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
-    <canvas id="background-canvas">canvas</canvas>
+  <div>
+    <canvas id="background-canvas"></canvas>
     <main-nav-bar />
     <router-view />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 import MainNavBar from "./components/navbar/MainNavBar.vue";
 import Home from "./views/home/Home.vue";
 
@@ -19,18 +19,11 @@ export default defineComponent({
     Home,
     MainNavBar
   },
-  mounted() {
-    // this.defineCanvas();
-    const canvas = defineCanvas();
-    initAnimation(canvas);
-  },
-  methods: {
-    // defineCanvas() {
-    //   const canvas = document.querySelector("canvas");
-    //   let ctx = canvas!.getContext("2d");
-    //   canvas!.width = window.innerWidth;
-    //   canvas!.height = window.innerHeight;
-    // }
+  setup() {
+    onMounted(() => {
+      const canvas = defineCanvas();
+      initAnimation(canvas);
+    });
   }
 });
 </script>
@@ -39,12 +32,14 @@ export default defineComponent({
 @import "assets/css/base.css";
 
 canvas {
-  margin: 0;
+  margin: 0 auto;
+  /* text-align: left; */
   z-index: -100;
-  background-color: #000000;
+  /* display: block; */
+  /* background-color: #000000; */
   position: absolute;
   left: 0;
-  top: 0;
+  top: 00;
   width: 100%;
   height: 100%;
 }

@@ -2,7 +2,8 @@
 
 :root {
   /* CSS HEX */
-  --xiketic: #171219;
+  --overlay-background: #171219;
+  --background: #000000;
   --red-crayola: #ed254e;
   --paolo-veronese-green: #169873;
   --almond: #dcc9b6;
@@ -13,6 +14,6 @@
 body {
   text-align: center;
   font-family: "Caveat", cursive;
-  /* background-color: var(--snow); */
+  background-color: var(--overlay-background);
   color: var(--snow);
 }

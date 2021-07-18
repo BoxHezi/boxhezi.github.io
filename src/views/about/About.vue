@@ -23,7 +23,6 @@ export default defineComponent({
 #about {
   margin: 0 auto;
   width: 85%;
-  background: #000000;
+  background: var(--background);
 }
-
 </style>
