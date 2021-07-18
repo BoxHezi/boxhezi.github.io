@@ -16,9 +16,6 @@ export default defineComponent({
       type: String,
       default: null
     }
-  },
-  data() {
-    return {};
   }
 });
 </script>

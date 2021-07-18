@@ -62,9 +62,6 @@ import {
 
 export default defineComponent({
   setup() {
-    return {};
-  },
-  data() {
     let detailArray: Array<string> = [];
 
     return {

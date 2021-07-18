@@ -6,7 +6,11 @@
         <div v-for="(value, key) in projectsRecordsDetailCN" :key="key">
           <h3>{{ key }}</h3>
           <ol>
-            <ul v-for="item in value" :key=item>{{item}}</ul>
+            <ul v-for="item in value" :key="item">
+              {{
+                item
+              }}
+            </ul>
           </ol>
         </div>
       </div>
@@ -16,7 +20,11 @@
         <div v-for="(value, key) in projectsRecordsDetailEN" :key="key">
           <h3>{{ key }}</h3>
           <ol>
-            <ul v-for="item in value" :key=item>{{item}}</ul>
+            <ul v-for="item in value" :key="item">
+              {{
+                item
+              }}
+            </ul>
           </ol>
         </div>
       </div>
@@ -34,9 +42,6 @@ import {
 
 export default defineComponent({
   setup() {
-    return {};
-  },
-  data() {
     let detailArray: Array<string> = [];
 
     return {
@@ -44,17 +49,17 @@ export default defineComponent({
       projectsRecordsDetailEN,
       detailArray
     };
-  },
-  methods: {
-    getRecordDetail(key: string, isCN: boolean) {
-      if (isCN) {
-        this.detailArray = projectsRecordsDetailCN[key];
-      } else {
-        this.detailArray = projectsRecordsDetailEN[key];
-      }
-      return this.detailArray;
-    }
   }
+  // methods: {
+  //   getRecordDetail(key: string, isCN: boolean) {
+  //     if (isCN) {
+  //       this.detailArray = projectsRecordsDetailCN[key];
+  //     } else {
+  //       this.detailArray = projectsRecordsDetailEN[key];
+  //     }
+  //     return this.detailArray;
+  //   }
+  // }
 });
 </script>
 

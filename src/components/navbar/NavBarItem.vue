@@ -44,6 +44,6 @@ export default defineComponent({
 .nav-bar-item {
   flex: 1;
   text-align: center;
-  color: var(--snow);
+  color: var(--text);
 }
 </style>

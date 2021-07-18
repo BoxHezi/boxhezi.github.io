@@ -24,7 +24,7 @@ hr {
 }
 
 #links {
-  color: var(--snow);
+  color: var(--text);
   margin-top: 10px;
   display: flex;
   align-items: center;

@@ -1,17 +1,18 @@
 <template>
   <div>
     <p id="full-command">
-      <span id="prefix"> {{ prefix }}</span>
-      <span id="command">{{ currentCommand }}</span>
+      <span class="prefix" v-if="!rootUser"> {{ prefix }}</span>
+      <span class="prefix" v-else> {{ rootPrefix }}</span>
+      <span class="command">{{ currentCommand }}</span>
     </p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 
 export default defineComponent({
-  data() {
+  setup() {
     let rootUser: boolean = false;
 
     const prefix: string = "boxhezi@localhost ~$ ";
@@ -24,31 +25,28 @@ export default defineComponent({
       "nc -lvnp 4444",
       "msfconsole"
     ];
-    let currentCommand = commands[0];
+    let currentCommand = ref(commands[0]);
 
-    return { commands, currentCommand, rootUser, prefix, rootPrefix };
-  },
-  methods: {
-    initialCommand(): String {
-      return this.currentCommand;
-    },
+    function initialCommand(): String {
+      return currentCommand.value;
+    }
 
-    startAnimation() {
+    function startAnimation() {
       let interval = 2000 + Math.floor(Math.random() * 1500);
       setInterval(() => {
         interval = 2000 + Math.floor(Math.random() * 1500);
         // console.log(interval);
         // console.log("Animation");
-        this.currentCommand = this.commands[this.getNextIndex()];
+        currentCommand.value = commands[getNextIndex()];
       }, interval);
-    },
+    }
 
     /**
      * get next command's index from commands array
      */
-    getNextIndex(): number {
-      const commandCount = this.commands.length;
-      const currentIndex = this.commands.indexOf(this.currentCommand);
+    function getNextIndex(): number {
+      const commandCount = commands.length;
+      const currentIndex = commands.indexOf(currentCommand.value);
 
       const nextIndex = currentIndex + 1;
 
@@ -57,12 +55,24 @@ export default defineComponent({
       }
       return nextIndex;
     }
-  },
-  mounted() {
-    const initCmd = this.initialCommand();
-    this.currentCommand = initCmd;
 
-    this.startAnimation();
+    onMounted(() => {
+      const initCmd = initialCommand();
+      currentCommand.value = initCmd;
+
+      startAnimation();
+    });
+
+    return {
+      commands,
+      currentCommand,
+      rootUser,
+      prefix,
+      rootPrefix,
+      initialCommand,
+      startAnimation,
+      getNextIndex
+    };
   }
 });
 </script>

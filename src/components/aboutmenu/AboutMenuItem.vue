@@ -6,22 +6,26 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
-  setup() {
-    return {};
+  setup(props) {
+    const router = useRouter();
+
+    function handleClick() {
+      if (props.path !== null) {
+        router.push(props.path);
+      }
+    }
+
+    return {
+      handleClick
+    };
   },
   props: {
     path: {
       default: null,
       type: String
-    }
-  },
-  methods: {
-    handleClick() {
-      if (this.path !== null) {
-        this.$router.push(this.path);
-      }
     }
   }
 });

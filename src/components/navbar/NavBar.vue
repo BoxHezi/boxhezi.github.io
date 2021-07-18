@@ -15,8 +15,8 @@ export default defineComponent({
 <style scoped>
 #nav-bar {
   height: 60px;
-  color: var(--snow);
-  background-color: var(--background);
+  color: var(--text);
+  /* background-color: var(--background); */
   display: flex;
   align-items: center;
   margin-bottom: 10px;

@@ -8,12 +8,12 @@
   --paolo-veronese-green: #169873;
   --almond: #dcc9b6;
   --timberwolf: #e4dfda;
-  --snow: #fffbfc;
+  --text: #fffbfc;
 }
 
 body {
   text-align: center;
   font-family: "Caveat", cursive;
   background-color: var(--overlay-background);
-  color: var(--snow);
+  color: var(--text);
 }
