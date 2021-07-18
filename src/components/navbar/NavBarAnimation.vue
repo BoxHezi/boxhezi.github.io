@@ -3,7 +3,7 @@
     <p id="full-command">
       <span class="prefix" v-if="!rootUser"> {{ prefix }}</span>
       <span class="prefix" v-else> {{ rootPrefix }}</span>
-      <span class="command">{{ currentCommand }}</span>
+      <span class="command">{{ displayCommand }}</span>
     </p>
   </div>
 </template>
@@ -26,10 +26,9 @@ export default defineComponent({
       "msfconsole"
     ];
     let currentCommand = ref(commands[0]);
-
-    function initialCommand(): String {
-      return currentCommand.value;
-    }
+    let displayCommand = ref("");
+    let charIndex: number = 0;
+    let deleting: boolean = false;
 
     function startAnimation() {
       let interval = 2000 + Math.floor(Math.random() * 1500);
@@ -56,20 +55,43 @@ export default defineComponent({
       return nextIndex;
     }
 
-    onMounted(() => {
-      const initCmd = initialCommand();
-      currentCommand.value = initCmd;
+    function typing(cmd: String) {
+      if (!deleting) {
+        if (charIndex <= cmd.length) {
+          displayCommand.value = cmd.slice(0, charIndex++) + "|";
+          setTimeout(() => {
+            typing(cmd);
+          }, 200);
+        } else {
+          deleting = !deleting;
+          typing(cmd);
+        }
+      } else {
+        if (charIndex !== 0) {
+          displayCommand.value = cmd.slice(0, charIndex--) + "|";
+          setTimeout(() => {
+            typing(cmd)
+          }, 200)
+        } else {
+          deleting = !deleting;
+          currentCommand.value = commands[getNextIndex()];
+          cmd = currentCommand.value;
+          typing(cmd);
+        }
+      }
+    }
 
-      startAnimation();
+    onMounted(() => {
+      typing(currentCommand.value);
     });
 
     return {
       commands,
       currentCommand,
+      displayCommand,
       rootUser,
       prefix,
       rootPrefix,
-      initialCommand,
       startAnimation,
       getNextIndex
     };

@@ -39,7 +39,7 @@ canvas {
   /* background-color: #000000; */
   position: absolute;
   left: 0;
-  top: 00;
+  top: 0;
   width: 100%;
   height: 100%;
 }
