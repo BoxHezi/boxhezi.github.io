@@ -3,7 +3,7 @@
     <p id="full-command">
       <span class="prefix" v-if="!rootUser"> {{ prefix }}</span>
       <span class="prefix" v-else> {{ rootPrefix }}</span>
-      <span class="command">{{ displayCommand }}</span>
+      <span class="command">{{ displayCommand }}|</span>
     </p>
   </div>
 </template>
@@ -58,7 +58,7 @@ export default defineComponent({
     function typing(cmd: String) {
       if (!deleting) {
         if (charIndex <= cmd.length) {
-          displayCommand.value = cmd.slice(0, charIndex++) + "|";
+          displayCommand.value = cmd.slice(0, charIndex++);
           setTimeout(() => {
             typing(cmd);
           }, 200);
@@ -68,15 +68,14 @@ export default defineComponent({
         }
       } else {
         if (charIndex !== 0) {
-          displayCommand.value = cmd.slice(0, charIndex--) + "|";
+          displayCommand.value = cmd.slice(0, charIndex--);
           setTimeout(() => {
-            typing(cmd)
-          }, 200)
+            typing(cmd);
+          }, 200);
         } else {
           deleting = !deleting;
           currentCommand.value = commands[getNextIndex()];
-          cmd = currentCommand.value;
-          typing(cmd);
+          typing(currentCommand.value);
         }
       }
     }
