@@ -23,29 +23,30 @@ export default defineComponent({
       "sudo -l",
       "sudo nmap -A localhost -p- -v",
       "nc -lvnp 4444",
-      "msfconsole"
+      "msfconsole",
     ];
-    let currentCommand = ref(commands[0]);
+    // let currentCommand = ref(commands[0]);
+    let currentCommand = commands[0];
     let displayCommand = ref("");
     let charIndex: number = 0;
     let deleting: boolean = false;
 
-    function startAnimation() {
-      let interval = 2000 + Math.floor(Math.random() * 1500);
-      setInterval(() => {
-        interval = 2000 + Math.floor(Math.random() * 1500);
-        // console.log(interval);
-        // console.log("Animation");
-        currentCommand.value = commands[getNextIndex()];
-      }, interval);
-    }
+    // function startAnimation() {
+    //   let interval = 2000 + Math.floor(Math.random() * 1500);
+    //   setInterval(() => {
+    //     interval = 2000 + Math.floor(Math.random() * 1500);
+    //     // console.log(interval);
+    //     // console.log("Animation");
+    //     currentCommand = commands[getNextIndex()];
+    //   }, interval);
+    // }
 
     /**
      * get next command's index from commands array
      */
     function getNextIndex(): number {
       const commandCount = commands.length;
-      const currentIndex = commands.indexOf(currentCommand.value);
+      const currentIndex = commands.indexOf(currentCommand);
 
       const nextIndex = currentIndex + 1;
 
@@ -61,7 +62,7 @@ export default defineComponent({
           displayCommand.value = cmd.slice(0, charIndex++);
           setTimeout(() => {
             typing(cmd);
-          }, 200);
+          }, 100);
         } else {
           deleting = !deleting;
           typing(cmd);
@@ -71,17 +72,18 @@ export default defineComponent({
           displayCommand.value = cmd.slice(0, charIndex--);
           setTimeout(() => {
             typing(cmd);
-          }, 200);
+          }, 100);
         } else {
           deleting = !deleting;
-          currentCommand.value = commands[getNextIndex()];
-          typing(currentCommand.value);
+          currentCommand = commands[getNextIndex()];
+          typing(currentCommand);
         }
       }
     }
 
     onMounted(() => {
-      typing(currentCommand.value);
+      // console.log(currentCommand);
+      typing(currentCommand);
     });
 
     return {
@@ -91,15 +93,20 @@ export default defineComponent({
       rootUser,
       prefix,
       rootPrefix,
-      startAnimation,
-      getNextIndex
+      // startAnimation,
+      getNextIndex,
     };
-  }
+  },
 });
 </script>
 
 <style scoped>
 #full-command {
   display: flex;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.command {
+  padding-left: 0.5rem;
 }
 </style>
