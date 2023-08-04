@@ -8,17 +8,18 @@
 import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
-  name: "NavBar"
+  name: "NavBar",
 });
 </script>
 
 <style scoped>
 #nav-bar {
   height: 60px;
+  width: 70%;
   color: var(--text);
-  /* background-color: var(--background); */
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  justify-content: center;
+  margin: 0 auto 10px auto;
 }
 </style>

@@ -13,7 +13,7 @@
 
 body {
   text-align: center;
-  font-family: "Caveat", cursive;
+  font-family: Calibri, Jura, sans-serif, "Open Sans", "Caveat";
   background-color: var(--overlay-background);
   color: var(--text);
 }

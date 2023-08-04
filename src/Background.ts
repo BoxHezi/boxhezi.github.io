@@ -9,8 +9,11 @@ export function defineCanvas() {
 }
 
 export function initAnimation(canvas: any) {
-  let letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-/\\[]*";
-  let letters = letter.split("");
+  // get all ascii printable
+  let letters: string[] = [];
+  for (let i = 32; i < 127; i++) {
+    letters.push(String.fromCharCode(i));
+  }
 
   let size = 10;
   let columns = canvas.width / size;

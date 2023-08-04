@@ -25,21 +25,12 @@ export default defineComponent({
       "nc -lvnp 4444",
       "msfconsole",
     ];
+
     // let currentCommand = ref(commands[0]);
     let currentCommand = commands[0];
     let displayCommand = ref("");
     let charIndex: number = 0;
     let deleting: boolean = false;
-
-    // function startAnimation() {
-    //   let interval = 2000 + Math.floor(Math.random() * 1500);
-    //   setInterval(() => {
-    //     interval = 2000 + Math.floor(Math.random() * 1500);
-    //     // console.log(interval);
-    //     // console.log("Animation");
-    //     currentCommand = commands[getNextIndex()];
-    //   }, interval);
-    // }
 
     /**
      * get next command's index from commands array

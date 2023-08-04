@@ -15,7 +15,7 @@
         <template v-slot:text><nav-bar-animation /></template>
       </nav-bar-item>
 
-      <nav-bar-item class="links-nav" path="/home">
+      <!-- <nav-bar-item class="links-nav" path="/home">
         <template v-slot:icon>
           <img src="@/assets/img/icon/navbar/home.svg" alt="" />
         </template>
@@ -43,7 +43,7 @@
           <img src="@/assets/img/icon/navbar/notification-filling.svg" alt="" />
         </template>
         <template v-slot:text>Contact</template>
-      </nav-bar-item>
+      </nav-bar-item> -->
     </nav-bar>
   </div>
 </template>
