@@ -5,9 +5,6 @@
     <div id="location" class="section"><slot name="location"></slot></div>
     <div id="links"><slot name="links"></slot></div>
     <hr />
-    <!-- <div id="avatar"><slot name="avatar"></slot></div>
-    <hr />
-    <div id="links"><slot name="links"></slot></div> -->
   </div>
 </template>
 
@@ -31,7 +28,7 @@ hr {
   margin-top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
 }
 

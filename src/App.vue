@@ -11,7 +11,7 @@ import { defineComponent, onMounted } from "vue";
 import MainNavBar from "./components/navbar/MainNavBar.vue";
 import Home from "./views/home/Home.vue";
 
-import { defineCanvas, initAnimation } from "./Background";
+import { initAnimation } from "./Background";
 
 export default defineComponent({
   name: "App",
@@ -21,8 +21,7 @@ export default defineComponent({
   },
   setup() {
     onMounted(() => {
-      const canvas = defineCanvas();
-      initAnimation(canvas);
+      initAnimation();
     });
   }
 });
