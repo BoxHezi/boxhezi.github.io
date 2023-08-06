@@ -1,0 +1,88 @@
+{
+  "summary": [
+    "Ability to handle common vulnerabilities",
+    "Knowledge in cyber kill chain, vulnerability management; skilled in Python, Java",
+    "Experienced in maintainig self-hosted cloud infrastructure",
+    "Native mandarin speaker, fluent in English"
+  ],
+  "experience": [
+    {
+      "contentTitle": "Information Security Engineer",
+      "subtitle": "Zhejiang University NGICS Platform",
+      "timeframe": "Jan 2022 - Arp 2023",
+      "content": [
+        "A research oriented role at Zhejiang University NGICS Platform under the College of Control Science and Engineering.",
+        "Investigating the behaviors behind mainstream DCS and PLC with the aid of Protocol Analysis and Reverse Engineering",
+        "From security perspective, discover potential attacks which can cause harm to the system.",
+        "Build real-case scenario to demostrate attacks in order to raise awareness."
+      ]
+    },
+    {
+      "contentTitle": "Backend Developer - Intern",
+      "subtitle": "Alibaba",
+      "timeframe": "Aug 2020 - Sept 2020",
+      "content": [
+        "Participated in the development of the simulation lottery system based on Java.",
+        "Conducted system function design and development",
+        "Engaged in the design and development of system function modules, drew activity diagrams, database ER diagrams, system architecture diagram, etc."
+      ]
+    },
+    {
+      "contentTitle": "Web Backend Developer - Intern",
+      "subtitle": "Wuhan ZHaolaobao Network Technology Co., Ltd",
+      "timeframe": "Dec 2017 - Feb 2018",
+      "content": [
+        "Using SpringMVC to interact with MySQL database for CRUD operations"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "contentTitle": "Monash University",
+      "subtitle": "Master of Cybersecurity",
+      "timeframe": "Mar 2020 - Nov 2021",
+      "content": [
+        "Participated in Monash Security (monsec) club",
+        "Participated in Downunder CTF"
+      ]
+    },
+    {
+      "contentTitle": "RMIT University",
+      "subtitle": "Bachelor of Computer Science",
+      "timeframe": "Feb 2016 - Nov 2019",
+      "content": [
+        "Active member of RMIT Information Security Collective club and RMIT Ultimate Frisbee Club",
+        "Attended CySCA 2018 and played Ultimate Frisbee National Uni Game 2018 for RMIT."
+      ]
+    }
+  ],
+  "certification": [
+    {
+      "contentTitle": "Pentesterlab's Unix Badge",
+      "subtitle": "PentesterLab"
+    },
+    {
+      "contentTitle": "Pentesterlab's Introduction Badge",
+      "subtitle": "PentesterLab"
+    },
+    {
+      "contentTitle": "Pentesterlab's Essential Badge",
+      "subtitle": "PentesterLab"
+    },
+    {
+      "contentTitle": "100W Cybersecurity Practices for Industrial Control SYstems",
+      "subtitle": "U.S. Department of Homeland Security",
+      "content": [
+        "E-G03380"
+      ]
+    },
+    {
+      "contentTitle": "Cisco Certified CyberOps Associate",
+      "subtitle": "Cisco",
+      "timeframe": "Issues Jul 2023 - Expires Jul 2026",
+      "content": [
+        "CSCO14419732"
+      ]
+    }
+  ]
+}

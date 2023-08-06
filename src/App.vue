@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <canvas id="background-canvas"></canvas>
     <main-nav-bar />
     <router-view />
@@ -17,13 +17,13 @@ export default defineComponent({
   name: "App",
   components: {
     Home,
-    MainNavBar
+    MainNavBar,
   },
   setup() {
     onMounted(() => {
       initAnimation();
     });
-  }
+  },
 });
 </script>
 
@@ -41,5 +41,10 @@ canvas {
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
 }
 </style>

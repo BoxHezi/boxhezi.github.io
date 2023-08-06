@@ -2,13 +2,13 @@
   <div>
     <nav-bar>
       <nav-bar-item class="name-nav" path="/">
-        <template v-slot:icon>
+        <!-- <template v-slot:icon>
           <img src="@/assets/img/box.jpg" alt="" />
         </template>
         <template v-slot:iconActive>
           <img src="@/assets/img/box.jpg" alt="" />
-        </template>
-        <template v-slot:text>Box Hezi</template>
+        </template> -->
+        <template v-slot:text>boxhezi</template>
       </nav-bar-item>
 
       <nav-bar-item class="placeholder-nav">
@@ -74,6 +74,7 @@ img {
 
 .name-nav {
   flex: 0.6;
+  font-style: italic;
 }
 
 .placeholder-nav {

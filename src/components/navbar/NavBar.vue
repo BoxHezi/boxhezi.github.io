@@ -15,7 +15,6 @@ export default defineComponent({
 <style scoped>
 #nav-bar {
   height: 60px;
-  width: 70%;
   color: var(--text);
   display: flex;
   align-items: center;
