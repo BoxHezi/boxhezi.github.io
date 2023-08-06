@@ -1,9 +1,13 @@
 {
   "summary": [
-    "Ability to handle common vulnerabilities",
-    "Knowledge in cyber kill chain, vulnerability management; skilled in Python, Java",
-    "Experienced in maintainig self-hosted cloud infrastructure",
-    "Native mandarin speaker, fluent in English"
+    {
+      "content": [
+        "Ability to handle common vulnerabilities",
+        "Knowledge in cyber kill chain, vulnerability management; skilled in Python, Java",
+        "Experienced in maintainig self-hosted cloud infrastructure",
+        "Native mandarin speaker, fluent in English"
+      ]
+    }
   ],
   "experience": [
     {

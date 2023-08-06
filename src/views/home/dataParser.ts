@@ -1,5 +1,5 @@
 import { default as resumeData } from "./data.json";
-import { blockTitleCSS, divCSS, ulCSS } from "./dataHandler";
+import { blockTitleCSS, contentTitleCSS, divCSS, flexCSS, ulCSS } from "./dataHandler";
 import { createHr, createListItem } from "./dataHandler";
 import { INFO_BLOCK_IDENTIFIER } from "./dataHandler";
 
@@ -24,23 +24,50 @@ export function start() {
 }
 
 // generate div according to resumeData
-function generateDiv(key: string, data: object): HTMLDivElement {
+function generateDiv(key: string, data: object[]): HTMLDivElement {
+  // shared div element, title
   const rootDiv: HTMLDivElement = createDivBlock(key);
   const titleDiv: HTMLDivElement = createTitle(key);
-  let subtitleDiv: HTMLDivElement = document.createElement("div");
-  let timeframeDiv: HTMLDivElement = document.createElement("div");
-  let contentDiv: HTMLDivElement = document.createElement("div");
-
-  // handle: 1 without subtitle and timeframe, 2 with subtitle and timeframe
-  if (typeof data[0] === "object") {
-    // TODO: handle data with subtitle and timeframe
-  } else {
-    contentDiv = createContent(Object.values(data));
-  }
+  // deticated div element. May contain different number of div depends on different data
+  let subblockDiv: HTMLDivElement = document.createElement("div");
 
   rootDiv.appendChild(titleDiv);
-  rootDiv.appendChild(contentDiv);
+
+  for (let d of data) {
+    subblockDiv = generateSubBlock(d);
+    rootDiv.appendChild(subblockDiv);
+  }
+
   return rootDiv;
+}
+
+// generate sub-block content
+function generateSubBlock(data: object): HTMLDivElement {
+  const div: HTMLDivElement = document.createElement("div");
+  let contentTitleAndTimeframeDiv: HTMLDivElement;
+  let subtitleDiv: HTMLDivElement;
+  let contentDiv: HTMLDivElement;
+
+  if (data["contentTitle"] !== undefined) {
+    // TODO: parse contentTitle
+    div.appendChild(createContentTitle(data["contentTitle"], data["timeframe"]))
+  }
+  if (data["subtitle"] !== undefined) {
+    // TODO: parse subtitle
+  }
+  if (data["content"] !== undefined) {
+    contentDiv = createContent(data["content"]);
+    div.appendChild(contentDiv);
+  }
+
+  return div;
+}
+
+// generate a div for contentTitle and timeframe flex display
+function generateFlexDiv(contentTitle: string, timeframe: string): HTMLDivElement {
+  const div: HTMLDivElement = document.createElement("div");
+
+  return div;
 }
 
 /*
@@ -49,11 +76,13 @@ function generateDiv(key: string, data: object): HTMLDivElement {
   ------------------------
   | title                |
   ------------------------
-  | subtitle   timeframe |
-  | content              |
+  | contentTitle         | // job title, uni, cert name, etc.
+  | subtitle   timeframe | // workplace, degree, issued from, etc.
+  | content              | // details
   ------------------------
 
-  one block contains ONE title, and ONE or MORE other parts
+  one block contains ONE title, and ONE or MORE sub-block
+  sub-block means items for separate for different block
 
   .block-title {
     text-align: left;
@@ -87,6 +116,25 @@ function createTitle(title: string) {
   return div;
 }
 
+// create contentTitle part
+function createContentTitle(contentTitle: string, timeframe: string): HTMLDivElement {
+  const div: HTMLDivElement = document.createElement("div");
+  div.style.cssText = flexCSS;
+
+  const contentTitleDiv: HTMLDivElement = document.createElement("div");
+  contentTitleDiv.innerText = contentTitle;
+  contentTitleDiv.style.cssText = contentTitleCSS;
+  div.appendChild(contentTitleDiv);
+
+  if (timeframe !== undefined) {
+    const timeframeDiv: HTMLDivElement = document.createElement("div");
+    timeframeDiv.innerText = timeframe;
+    div.appendChild(timeframeDiv);
+  }
+
+  return div;
+}
+
 // create subtitle part
 function createSubtitle(subtitle: string) {}
 
@@ -95,6 +143,7 @@ function createTimeframe(timeframe: string) {}
 
 // create content part
 function createContent(content: string[]): HTMLDivElement {
+  console.log(content);
   const div: HTMLDivElement = document.createElement("div");
   const ul: HTMLUListElement = document.createElement("ul");
 
