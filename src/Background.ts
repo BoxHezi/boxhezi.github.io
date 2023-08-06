@@ -1,13 +1,22 @@
-function defineCanvas() {
+function defineCanvas(width: number, height: number) {
   const canvas = document.querySelector("canvas");
-  canvas!.width = window.innerWidth; // assign innderWidth to canvas if canvas is not null
-  canvas!.height = window.innerHeight; // assign innerHeight to canvas if canvas is not null
+  // canvas!.width = window.innerWidth; // assign innderWidth to canvas if canvas is not null
+  // // canvas!.height = window.innerHeight; // assign innerHeight to canvas if canvas is not null
+
+  // // get html height instead of window height
+  // const html = document.querySelector("html");
+  // const height =
+  //   Math.max(html!.scrollHeight, html!.clientHeight, html!.offsetHeight) + 20;
+  // // console.log(height);
+  // canvas!.height = height;
+  canvas!.width = width;
+  canvas!.height = height;
 
   return canvas;
 }
 
-export function initAnimation() {
-  const canvas = defineCanvas();
+export function initAnimation(width: number, height: number) {
+  const canvas = defineCanvas(width, height);
 
   // get all ascii printable
   let letters: string[] = [];

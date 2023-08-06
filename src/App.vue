@@ -11,7 +11,7 @@ import { defineComponent, onMounted } from "vue";
 import MainNavBar from "./components/navbar/MainNavBar.vue";
 import Home from "./views/home/Home.vue";
 
-import { initAnimation } from "./Background";
+import { initAnimation as init } from "./Background";
 
 export default defineComponent({
   name: "App",
@@ -21,7 +21,16 @@ export default defineComponent({
   },
   setup() {
     onMounted(() => {
-      initAnimation();
+      // set a timeout in order to ensure html max height can be obtained
+      setTimeout(() => {
+        const width = window.innerWidth; // dynamically get window height
+        const html = document.querySelector("html");
+        const height =
+          Math.max(html!.clientHeight, html!.scrollHeight, html!.offsetHeight) +
+          20; // get html element's height
+
+        init(width, height);
+      }, 50);
     });
   },
 });
@@ -40,7 +49,6 @@ canvas {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
 }
 
 .container {

@@ -1,5 +1,12 @@
 import { default as resumeData } from "./data.json";
-import { blockTitleCSS, contentTitleCSS, divCSS, flexCSS, ulCSS } from "./dataHandler";
+import {
+  blockTitleCSS,
+  contentTitleCSS,
+  divCSS,
+  flexCSS,
+  ulCSS,
+  subtitleCSS
+} from "./dataHandler";
 import { createHr, createListItem } from "./dataHandler";
 import { INFO_BLOCK_IDENTIFIER } from "./dataHandler";
 
@@ -44,16 +51,15 @@ function generateDiv(key: string, data: object[]): HTMLDivElement {
 // generate sub-block content
 function generateSubBlock(data: object): HTMLDivElement {
   const div: HTMLDivElement = document.createElement("div");
-  let contentTitleAndTimeframeDiv: HTMLDivElement;
-  let subtitleDiv: HTMLDivElement;
   let contentDiv: HTMLDivElement;
 
   if (data["contentTitle"] !== undefined) {
-    // TODO: parse contentTitle
-    div.appendChild(createContentTitle(data["contentTitle"], data["timeframe"]))
+    div.appendChild(
+      createContentTitle(data["contentTitle"], data["timeframe"])
+    );
   }
   if (data["subtitle"] !== undefined) {
-    // TODO: parse subtitle
+    div.appendChild(createSubtitle(data["subtitle"]));
   }
   if (data["content"] !== undefined) {
     contentDiv = createContent(data["content"]);
@@ -63,23 +69,16 @@ function generateSubBlock(data: object): HTMLDivElement {
   return div;
 }
 
-// generate a div for contentTitle and timeframe flex display
-function generateFlexDiv(contentTitle: string, timeframe: string): HTMLDivElement {
-  const div: HTMLDivElement = document.createElement("div");
-
-  return div;
-}
-
 /*
-  Information part contains 4 parts: title, subtitle, timeframe, content
+  Information part contains 5 parts: title, contentTitle, subtitle, timeframe, content
 
-  ------------------------
-  | title                |
-  ------------------------
-  | contentTitle         | // job title, uni, cert name, etc.
-  | subtitle   timeframe | // workplace, degree, issued from, etc.
-  | content              | // details
-  ------------------------
+  -----------------------------
+  | title                     |
+  ------------------------------
+  | contentTitle    timeframe | // job title, uni, cert name, etc.
+  | subtitle                  | // workplace, degree, issued from, etc.
+  | content                   | // details
+  -----------------------------
 
   one block contains ONE title, and ONE or MORE sub-block
   sub-block means items for separate for different block
@@ -116,8 +115,11 @@ function createTitle(title: string) {
   return div;
 }
 
-// create contentTitle part
-function createContentTitle(contentTitle: string, timeframe: string): HTMLDivElement {
+// create contentTitle and timeframe part
+function createContentTitle(
+  contentTitle: string,
+  timeframe: string
+): HTMLDivElement {
   const div: HTMLDivElement = document.createElement("div");
   div.style.cssText = flexCSS;
 
@@ -136,14 +138,18 @@ function createContentTitle(contentTitle: string, timeframe: string): HTMLDivEle
 }
 
 // create subtitle part
-function createSubtitle(subtitle: string) {}
+function createSubtitle(subtitle: string): HTMLDivElement {
+  const div: HTMLDivElement = document.createElement("div");
+  if (subtitle !== undefined) {
+    div.innerText = subtitle;
+  }
 
-// create timeframe part
-function createTimeframe(timeframe: string) {}
+  div.style.cssText = subtitleCSS;
+  return div;
+}
 
 // create content part
 function createContent(content: string[]): HTMLDivElement {
-  console.log(content);
   const div: HTMLDivElement = document.createElement("div");
   const ul: HTMLUListElement = document.createElement("ul");
 

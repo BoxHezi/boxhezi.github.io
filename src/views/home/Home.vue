@@ -16,12 +16,12 @@
             <template v-slot:text> boxhezi | </template>
           </profile-links>
 
-          <profile-links link="https://gitlab.com/BoxHezi">
+          <!-- <profile-links link="https://gitlab.com/BoxHezi">
             <template v-slot:icon>
               <font-awesome-icon icon="fa-brands fa-gitlab" />
             </template>
             <template v-slot:text> boxhezi | </template>
-          </profile-links>
+          </profile-links> -->
 
           <profile-links link="https://www.linkedin.com/in/boxuan-lu/">
             <template v-slot:icon>
@@ -33,44 +33,7 @@
       </home-summary>
     </div>
 
-    <div id="home-info-block">
-      <div id="summary-block">
-        <home-info-block title="Summary" />
-        <info-block-content>
-          <template v-slot:content>
-            <ul class="summaryList">
-              <li>Ability to handle common vulnerability</li>
-              <li>
-                Knowledge in cyber kill chain, vulnerability management; Skilled
-                in Python, Java
-              </li>
-              <li>
-                Experienced in maintaining self-hosted cloud infrastructure
-              </li>
-              <li>Native mandarin speaker, fluent in English</li>
-            </ul>
-          </template>
-        </info-block-content>
-      </div>
-
-      <div id="experience-block">
-        <home-info-block title="Experience" />
-        <info-block-content>
-          <template v-slot:contentTitle>
-            <p>Information Security Engineer</p>
-          </template>
-          <template v-slot:timeframe>
-            <p>Jan 2022 - Apr 2023</p>
-          </template>
-          <template v-slot:subtitle>
-            <p>Zhejiang University NGICS Platform</p>
-          </template>
-          <template v-slot:content>
-            <p>Content</p>
-          </template>
-        </info-block-content>
-      </div>
-    </div>
+    <div id="home-info-block"></div>
 
     <div id="test"></div>
   </div>
@@ -111,5 +74,4 @@ p {
   margin: 0.2rem auto;
   list-style-type: none;
 }
-
 </style>
