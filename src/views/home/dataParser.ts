@@ -35,14 +35,18 @@ function generateDiv(key: string, data: object[]): HTMLDivElement {
   // shared div element, title
   const rootDiv: HTMLDivElement = createDivBlock(key);
   const titleDiv: HTMLDivElement = createTitle(key);
-  // deticated div element. May contain different number of div depends on different data
-  let subblockDiv: HTMLDivElement = document.createElement("div");
+  // dedicated div element. May contain different number of div depends on different data
+  let subBlockDiv: HTMLDivElement = document.createElement("div");
 
   rootDiv.appendChild(titleDiv);
 
-  for (let d of data) {
-    subblockDiv = generateSubBlock(d);
-    rootDiv.appendChild(subblockDiv);
+  for (let i: number  = 0; i < data.length; i++) {
+    const d = data[i];
+    subBlockDiv = generateSubBlock(d);
+    if (i !== data.length - 1) { // avoid add <br /> to the last item in each block
+      subBlockDiv.appendChild(document.createElement("br"));
+    }
+    rootDiv.appendChild(subBlockDiv);
   }
 
   return rootDiv;

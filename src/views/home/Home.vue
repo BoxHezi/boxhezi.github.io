@@ -35,7 +35,6 @@
 
     <div id="home-info-block"></div>
 
-    <div id="test"></div>
   </div>
 </template>
 

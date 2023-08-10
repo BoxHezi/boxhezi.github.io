@@ -6,6 +6,7 @@ export const flexCSS: string =
   "display: flex; justify-content: space-between; align-items: center";
 export const contentTitleCSS: string = "font-size: 1.2rem; font-weight: bold; margin: 0.2rem";
 export const subtitleCSS: string = "color: #a0a0a0; margin: 0.2rem; text-align: left";
+export const liCSS: string = "margin: 0.1rem auto";
 
 export const hrCSS: string = "margin: 0.2rem auto";
 
@@ -18,6 +19,7 @@ export function createHr() {
 export function createListItem(content: string) {
   const li = document.createElement("li");
   li.innerText = content;
+  li.style.cssText = liCSS;
   return li;
 }
 
