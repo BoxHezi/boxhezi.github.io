@@ -1,10 +1,10 @@
 function defineCanvas(width: number, height: number) {
-  const canvas = document.querySelector("canvas");
+  const canvas = document.querySelector("canvas")!;
 
   canvas!.width = width;
   canvas!.height = height;
 
-  return canvas;
+  return canvas!;
 }
 
 export function initAnimation(width: number, height: number) {
@@ -37,8 +37,8 @@ function draw(letters: string[], drops: number[], canvas: any, size: number) {
   ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)]; // display random character from letters
+  for (let i: number = 0; i < drops.length; i++) {
+    const text: string = letters[Math.floor(Math.random() * letters.length)]; // display random character from letters
     ctx.fillStyle = "#00ff00";
     // ctx.font = "20px sans-serif";
     ctx.fillText(text, i * size, drops[i] * size);
