@@ -12,18 +12,18 @@ export function initAnimation(width: number, height: number) {
 
   // get all ascii printable
   const letters: string[] = [];
-  for (let i = 32; i < 127; i++) {
+  for (let i: number = 32; i < 127; i++) {
     letters.push(String.fromCharCode(i));
   }
 
   const size: number = 20;
-  const columns = canvas!.width / size; // calculate columns if canvas is not null
+  const columns: number = canvas!.width / size; // calculate columns if canvas is not null
 
   let drops: number[] = [];
-  for (let i = 0; i < columns; i++) {
+  for (let i: number = 0; i < columns; i++) {
     // initialize the starting position for each column
     const offset = 100;
-    const random = Math.floor(Math.random() * offset);
+    const random: number = Math.floor(Math.random() * offset);
     drops[i] = random - offset;
   }
 

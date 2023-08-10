@@ -4,7 +4,7 @@
       "content": [
         "Ability to handle common vulnerabilities",
         "Knowledge in cyber kill chain, vulnerability management; skilled in Python, Java",
-        "Experienced in maintainig self-hosted cloud infrastructure",
+        "Experienced in maintaining self-hosted cloud infrastructure",
         "Native mandarin speaker, fluent in English"
       ]
     }
@@ -16,9 +16,9 @@
       "timeframe": "Jan 2022 - Arp 2023",
       "content": [
         "A research oriented role at Zhejiang University NGICS Platform under the College of Control Science and Engineering.",
-        "Investigating the behaviors behind mainstream DCS and PLC with the aid of Protocol Analysis and Reverse Engineering",
+        "Investigating the behaviors behind mainstream DCS (Distributed Control System) and PLC (Programmable Logic Controller) with the aid of Protocol Analysis and Reverse Engineering",
         "From security perspective, discover potential attacks which can cause harm to the system.",
-        "Build real-case scenario to demostrate attacks in order to raise awareness."
+        "Build real-case scenario to demonstrate attacks in order to raise awareness."
       ]
     },
     {
@@ -28,12 +28,13 @@
       "content": [
         "Participated in the development of the simulation lottery system based on Java.",
         "Conducted system function design and development",
-        "Engaged in the design and development of system function modules, drew activity diagrams, database ER diagrams, system architecture diagram, etc."
+        "Engaged in the design and development of system function modules, drew activity diagrams, database ER diagrams, system architecture diagram, etc.",
+        "Applied extra encryption, hashing when required"
       ]
     },
     {
       "contentTitle": "Web Backend Developer - Intern",
-      "subtitle": "Wuhan ZHaolaobao Network Technology Co., Ltd",
+      "subtitle": "Wuhan Zhaolaobao Network Technology Co., Ltd",
       "timeframe": "Dec 2017 - Feb 2018",
       "content": [
         "Using SpringMVC to interact with MySQL database for CRUD operations"
@@ -62,6 +63,31 @@
   ],
   "certification": [
     {
+      "contentTitle": "100W Cybersecurity Practices for Industrial Control Systems",
+      "subtitle": "U.S. Department of Homeland Security",
+      "content": [
+        "Credential ID: E-G03380"
+      ]
+    },
+    {
+      "contentTitle": "Cisco Certified CyberOps Associate",
+      "subtitle": "Cisco",
+      "timeframe": "Issued Jul 2023 - Expires Jul 2026",
+      "content": [
+        "Credential ID: CSCO14419732",
+        "https://www.credly.com/badges/02156c19-2ce7-4d82-a71f-5d2d9dc37442/public_url"
+      ]
+    },
+    {
+      "contentTitle": "Certified Cyber Threat Intelligence Analyst",
+      "subtitle": "Udemy",
+      "timeframe": "Issued Aug 2023",
+      "content": [
+        "Credential ID: tUC-ad22c0e2-e670-46b1-ac01-cfa088b53453",
+        "https://www.udemy.com/certificate/UC-ad22c0e2-e670-46b1-ac01-cfa088b53453/"
+      ]
+    },
+    {
       "contentTitle": "Pentesterlab's Unix Badge",
       "subtitle": "PentesterLab"
     },
@@ -72,21 +98,6 @@
     {
       "contentTitle": "Pentesterlab's Essential Badge",
       "subtitle": "PentesterLab"
-    },
-    {
-      "contentTitle": "100W Cybersecurity Practices for Industrial Control Systems",
-      "subtitle": "U.S. Department of Homeland Security",
-      "content": [
-        "E-G03380"
-      ]
-    },
-    {
-      "contentTitle": "Cisco Certified CyberOps Associate",
-      "subtitle": "Cisco",
-      "timeframe": "Issues Jul 2023 - Expires Jul 2026",
-      "content": [
-        "CSCO14419732"
-      ]
     }
   ]
 }
