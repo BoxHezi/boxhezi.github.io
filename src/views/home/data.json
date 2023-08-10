@@ -41,6 +41,22 @@
       ]
     }
   ],
+  "project": [
+    {
+      "contentTitle": "Covid-19 Tracking Website for Australia",
+      "subtitle": "Front-end Dev",
+      "timeframe": "Apr 2020 - Present",
+      "content": [
+        "Developed an information website that could display Covid-19 in Australia in real time through the real data of Covid-19 provided by the Australian government",
+        "Designed the website, completed the layout, functional module design, etc., and used ReactJS to complete the production of the front-end page",
+        "Cleaned the data and used the JS third-party library (echarts.js) to draw different types of charts on the data to provide data basis for information search"
+      ],
+      "links": [
+        "https://covid-19-au.com/",
+        "https://github.com/covid-19-au/covid-19-au.github.io"
+      ]
+    }
+  ],
   "education": [
     {
       "contentTitle": "Monash University",
@@ -74,7 +90,9 @@
       "subtitle": "Cisco",
       "timeframe": "Issued Jul 2023 - Expires Jul 2026",
       "content": [
-        "Credential ID: CSCO14419732",
+        "Credential ID: CSCO14419732"
+      ],
+      "links": [
         "https://www.credly.com/badges/02156c19-2ce7-4d82-a71f-5d2d9dc37442/public_url"
       ]
     },
@@ -83,7 +101,9 @@
       "subtitle": "Udemy",
       "timeframe": "Issued Aug 2023",
       "content": [
-        "Credential ID: UC-ad22c0e2-e670-46b1-ac01-cfa088b53453",
+        "Credential ID: UC-ad22c0e2-e670-46b1-ac01-cfa088b53453"
+      ],
+      "links": [
         "https://www.udemy.com/certificate/UC-ad22c0e2-e670-46b1-ac01-cfa088b53453/"
       ]
     },
