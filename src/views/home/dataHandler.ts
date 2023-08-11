@@ -10,27 +10,13 @@ interface Data {
   timeframe?: string;
   subtitle?: string;
   content: string[];
+  links?: string[];
 }
 
-export const INFO_BLOCK_IDENTIFIER = "home-info-block";
-
-export function createHR() {
-  const hrCSS: string = "margin: 0.2rem auto";
-  const hr: HTMLHRElement = document.createElement("hr");
-  hr.style.cssText = hrCSS;
-  return hr;
-}
-
-export function createListItem(content: string) {
-  const liCSS: string = "margin: 0.1rem auto; text-align: justify";
-  const li: HTMLLIElement = document.createElement("li");
-  li.innerText = content;
-  li.style.cssText = liCSS;
-  return li;
-}
+const INFO_BLOCK_IDENTIFIER = "home-info-block";
 
 export function initResumeData(): ResumeData[] {
-  const SEQ: string[] = ["summary", "experience", "education", "certification"]
+  const SEQ: string[] = ["summary", "experience", "project", "education", "certification"]
   let data2parse: ResumeData[] = [];
 
   for (let key of SEQ) {
@@ -41,7 +27,8 @@ export function initResumeData(): ResumeData[] {
         contentTitle: i["contentTitle"],
         timeframe: i["timeframe"],
         subtitle: i["subtitle"],
-        content: i["content"]
+        content: i["content"],
+        links: i["links"]
       };
       dList.push(dd);
     }
@@ -51,14 +38,47 @@ export function initResumeData(): ResumeData[] {
   return data2parse;
 }
 
+function createHR() {
+  const hrCSS: string = "margin: 0.2rem auto";
+  const hr: HTMLHRElement = document.createElement("hr");
+  hr.style.cssText = hrCSS;
+  return hr;
+}
+
+/*
+  pass link as content when the content is a link
+ */
+function createListItem(content: string, isLink: boolean = false): HTMLLIElement {
+  const liCSS: string = "margin: 0.1rem auto; text-align: justify";
+  const li: HTMLLIElement = document.createElement("li");
+  if (!isLink) {
+    li.innerText = content;
+  } else {
+    li.appendChild(createAnchorItem(content));
+  }
+  li.style.cssText = liCSS;
+  return li;
+}
+
+function createAnchorItem(link: string): HTMLAnchorElement {
+  const aCSS: string = "color: #ffffff; margin: 0.1rem auto";
+  const anchor: HTMLAnchorElement = document.createElement("a");
+  anchor.href = link;
+  anchor.innerText = link;
+  anchor.target = "_blank";
+  anchor.style.cssText = aCSS;
+
+  return anchor
+}
+
 export function data2HTML(rd: ResumeData) {
-  const blockRootDiv = generateBlockRootDiv(rd.key)
+  const blockRootDiv: HTMLDivElement = generateBlockRootDiv(rd.key)
 
   const parentDiv = document.getElementById(INFO_BLOCK_IDENTIFIER)!;
   parentDiv!.appendChild(blockRootDiv);
 
   for (let i: number = 0; i < rd.data!.length; i++) {
-    const subBlock = generateSubBlockDiv(rd.data![i]);
+    const subBlock: HTMLDivElement = generateSubBlockDiv(rd.data![i]);
     parentDiv!.appendChild(subBlock);
     if (i !== rd.data!.length - 1) {
       parentDiv!.appendChild(document.createElement("br"));
@@ -84,7 +104,7 @@ function generateSubBlockDiv(data: Data): HTMLDivElement {
     div.appendChild(createSubtitleDiv(data.subtitle));
   }
   if (data.content !== undefined) {
-    div.appendChild((createContentDiv(data.content)));
+    div.appendChild((createContentDiv(data.content, data.links)));
   }
 
   return div;
@@ -115,7 +135,7 @@ function generateSubBlockDiv(data: Data): HTMLDivElement {
 // block root, create div with <block name>-block, e.g. summary-block, experience-block, etc.
 // only run once for each block
 function createBlockRootDiv(id: string): HTMLDivElement {
-  const div = document.createElement("div");
+  const div: HTMLDivElement = document.createElement("div");
   div.id = id + "-block";
   return div;
 }
@@ -123,7 +143,7 @@ function createBlockRootDiv(id: string): HTMLDivElement {
 function createTitleDiv(title: string): HTMLDivElement {
   const blockTitleCSS: string =
     "text-align: left; font-size: 2rem; font-weight: bold; margin: 0.5rem auto";
-  const div = document.createElement("div");
+  const div: HTMLDivElement = document.createElement("div");
   div.innerText = title[0].toUpperCase() + title.slice(1);
   div.appendChild(createHR());
 
@@ -164,7 +184,7 @@ function createSubtitleDiv(subtitle: string): HTMLDivElement {
   return div;
 }
 
-function createContentDiv(content: string[]): HTMLDivElement {
+function createContentDiv(content: string[], links?: string[]): HTMLDivElement {
   const ulCSS: string = "margin: 0.2rem auto; list-style-type: none";
   const divCSS: string = "text-align: left";
 
@@ -173,6 +193,12 @@ function createContentDiv(content: string[]): HTMLDivElement {
 
   for (let c of content) {
     ul.appendChild(createListItem(c));
+  }
+
+  if (links !== undefined) {
+    for (let link of links) {
+      ul.appendChild(createListItem(link, true));
+    }
   }
 
   div.style.cssText = divCSS;
