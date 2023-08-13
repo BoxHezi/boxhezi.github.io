@@ -1,7 +1,7 @@
 {
   "summary": [
     {
-      "content": [
+      "contents": [
         "Ability to handle common vulnerabilities",
         "Knowledge in cyber kill chain, vulnerability management; skilled in Python, Java",
         "Experienced in maintaining self-hosted cloud infrastructure",
@@ -14,7 +14,7 @@
       "contentTitle": "Information Security Engineer",
       "subtitle": "Zhejiang University NGICS Platform",
       "timeframe": "Jan 2022 - Arp 2023",
-      "content": [
+      "contents": [
         "A research oriented role at Zhejiang University NGICS Platform under the College of Control Science and Engineering.",
         "Investigating the behaviors behind mainstream DCS (Distributed Control System) and PLC (Programmable Logic Controller) with the aid of Protocol Analysis and Reverse Engineering",
         "From security perspective, discover potential attacks which can cause harm to the system.",
@@ -25,7 +25,7 @@
       "contentTitle": "Backend Developer - Intern",
       "subtitle": "Alibaba",
       "timeframe": "Aug 2020 - Sept 2020",
-      "content": [
+      "contents": [
         "Participated in the development of the simulation lottery system based on Java.",
         "Conducted system function design and development",
         "Engaged in the design and development of system function modules, drew activity diagrams, database ER diagrams, system architecture diagram, etc.",
@@ -36,7 +36,7 @@
       "contentTitle": "Web Backend Developer - Intern",
       "subtitle": "Wuhan Zhaolaobao Network Technology Co., Ltd",
       "timeframe": "Dec 2017 - Feb 2018",
-      "content": [
+      "contents": [
         "Using SpringMVC to interact with MySQL database for CRUD operations"
       ]
     }
@@ -46,7 +46,7 @@
       "contentTitle": "Covid-19 Tracking Website for Australia",
       "subtitle": "Front-end Dev",
       "timeframe": "Apr 2020 - Present",
-      "content": [
+      "contents": [
         "Developed an information website that could display Covid-19 in Australia in real time through the real data of Covid-19 provided by the Australian government",
         "Designed the website, completed the layout, functional module design, etc., and used ReactJS to complete the production of the front-end page",
         "Cleaned the data and used the JS third-party library (echarts.js) to draw different types of charts on the data to provide data basis for information search"
@@ -62,7 +62,7 @@
       "contentTitle": "Monash University",
       "subtitle": "Master of Cybersecurity",
       "timeframe": "Mar 2020 - Nov 2021",
-      "content": [
+      "contents": [
         "Participated in Monash Security (monsec) club",
         "Participated in Downunder CTF"
       ]
@@ -71,7 +71,7 @@
       "contentTitle": "RMIT University",
       "subtitle": "Bachelor of Computer Science",
       "timeframe": "Feb 2016 - Nov 2019",
-      "content": [
+      "contents": [
         "Active member of RMIT Information Security Collective club and RMIT Ultimate Frisbee Club",
         "Attended CySCA 2018 and played Ultimate Frisbee National Uni Game 2018 for RMIT."
       ]
@@ -81,7 +81,7 @@
     {
       "contentTitle": "100W Cybersecurity Practices for Industrial Control Systems",
       "subtitle": "U.S. Department of Homeland Security",
-      "content": [
+      "contents": [
         "Credential ID: E-G03380"
       ]
     },
@@ -89,7 +89,7 @@
       "contentTitle": "Cisco Certified CyberOps Associate",
       "subtitle": "Cisco",
       "timeframe": "Issued Jul 2023 - Expires Jul 2026",
-      "content": [
+      "contents": [
         "Credential ID: CSCO14419732"
       ],
       "links": [
@@ -100,7 +100,7 @@
       "contentTitle": "Certified Cyber Threat Intelligence Analyst",
       "subtitle": "Udemy",
       "timeframe": "Issued Aug 2023",
-      "content": [
+      "contents": [
         "Credential ID: UC-ad22c0e2-e670-46b1-ac01-cfa088b53453"
       ],
       "links": [

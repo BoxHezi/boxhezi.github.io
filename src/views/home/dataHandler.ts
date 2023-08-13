@@ -9,7 +9,7 @@ interface Data {
   contentTitle?: string;
   timeframe?: string;
   subtitle?: string;
-  content: string[];
+  contents: string[];
   links?: string[];
 }
 
@@ -27,7 +27,7 @@ export function initResumeData(): ResumeData[] {
         contentTitle: i["contentTitle"],
         timeframe: i["timeframe"],
         subtitle: i["subtitle"],
-        content: i["content"],
+        contents: i["contents"],
         links: i["links"]
       };
       dList.push(dd);
@@ -46,15 +46,15 @@ function createHR() {
 }
 
 /*
-  pass link as content when the content is a link
+  pass link as contents when the contents is a link
  */
-function createListItem(content: string, isLink: boolean = false): HTMLLIElement {
+function createListItem(contents: string, isLink: boolean = false): HTMLLIElement {
   const liCSS: string = "margin: 0.1rem auto; text-align: justify";
   const li: HTMLLIElement = document.createElement("li");
   if (!isLink) {
-    li.innerText = content;
+    li.innerText = contents;
   } else {
-    li.appendChild(createAnchorItem(content));
+    li.appendChild(createAnchorItem(contents));
   }
   li.style.cssText = liCSS;
   return li;
@@ -103,22 +103,22 @@ function generateSubBlockDiv(data: Data): HTMLDivElement {
   if (data.subtitle !== undefined) {
     div.appendChild(createSubtitleDiv(data.subtitle));
   }
-  if (data.content !== undefined) {
-    div.appendChild((createContentDiv(data.content, data.links)));
+  if (data.contents !== undefined) {
+    div.appendChild((createContentDiv(data.contents, data.links)));
   }
 
   return div;
 }
 
 /*
-  Information part contains 5 parts: title, contentTitle, subtitle, timeframe, content
+  Information part contains 5 parts: title, contentTitle, subtitle, timeframe, contents
 
   -----------------------------
   | title                     |
   -----------------------------
   | contentTitle    timeframe | // job title, uni, cert name, etc.
   | subtitle                  | // workplace, degree, issued from, etc.
-  | content                   | // details
+  | contents                   | // details
   -----------------------------
 
   one block contains ONE title, and ONE or MORE sub-block
@@ -184,14 +184,14 @@ function createSubtitleDiv(subtitle: string): HTMLDivElement {
   return div;
 }
 
-function createContentDiv(content: string[], links?: string[]): HTMLDivElement {
+function createContentDiv(contents: string[], links?: string[]): HTMLDivElement {
   const ulCSS: string = "margin: 0.2rem auto; list-style-type: none";
   const divCSS: string = "text-align: left";
 
   const div: HTMLDivElement = document.createElement("div");
   const ul: HTMLUListElement = document.createElement("ul");
 
-  for (let c of content) {
+  for (let c of contents) {
     ul.appendChild(createListItem(c));
   }
 
