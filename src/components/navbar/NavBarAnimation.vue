@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import {defineComponent, ref, onMounted} from "vue";
 
 export default defineComponent({
   setup() {
@@ -25,8 +25,8 @@ export default defineComponent({
       "nc -lvnp 4444",
       "msfconsole",
     ];
+    const timeout: number = 100;
 
-    // let currentCommand = ref(commands[0]);
     let currentCommand = commands[0];
     let displayCommand = ref("");
     let charIndex: number = 0;
@@ -38,13 +38,8 @@ export default defineComponent({
     function getNextIndex(): number {
       const commandCount = commands.length;
       const currentIndex = commands.indexOf(currentCommand);
-
       const nextIndex = currentIndex + 1;
-
-      if (nextIndex >= commandCount) {
-        return 0;
-      }
-      return nextIndex;
+      return nextIndex >= commandCount ? 0 : nextIndex;
     }
 
     function typing(cmd: String) {
@@ -53,7 +48,7 @@ export default defineComponent({
           displayCommand.value = cmd.slice(0, charIndex++);
           setTimeout(() => {
             typing(cmd);
-          }, 100);
+          }, timeout);
         } else {
           deleting = !deleting;
           typing(cmd);
@@ -63,7 +58,7 @@ export default defineComponent({
           displayCommand.value = cmd.slice(0, charIndex--);
           setTimeout(() => {
             typing(cmd);
-          }, 100);
+          }, timeout);
         } else {
           deleting = !deleting;
           currentCommand = commands[getNextIndex()];
@@ -73,7 +68,6 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      // console.log(currentCommand);
       typing(currentCommand);
     });
 
@@ -84,8 +78,6 @@ export default defineComponent({
       rootUser,
       prefix,
       rootPrefix,
-      // startAnimation,
-      getNextIndex,
     };
   },
 });

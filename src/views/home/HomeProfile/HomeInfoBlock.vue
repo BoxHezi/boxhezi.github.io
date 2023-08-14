@@ -3,7 +3,6 @@
     <div class="block-title">
       <div>{{ data.title }}</div>
       <hr/>
-      <!--      <home-info-sub-block></home-info-sub-block>-->
     </div>
     <div v-for="value in data.values">
       <home-info-sub-block :value="value"></home-info-sub-block>
@@ -13,7 +12,6 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import InfoBlockContent from "./InfoBlockContent.vue";
 import HomeInfoSubBlock from "@/views/home/HomeProfile/HomeInfoSubBlock.vue";
 
 export default defineComponent({
@@ -38,8 +36,7 @@ export default defineComponent({
     }
   },
   components: {
-    HomeInfoSubBlock,
-    InfoBlockContent,
+    HomeInfoSubBlock
   }
 });
 </script>

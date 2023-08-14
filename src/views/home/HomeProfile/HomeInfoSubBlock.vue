@@ -18,7 +18,9 @@
     </div>
     <div class="links" v-if="data.links !== undefined">
       <ul>
-        <li v-for="link in data.links"><a :href="link" target="_blank">{{ link }}</a></li>
+        <li v-for="link in data.links">
+          <sub-block-link :linkData="link"></sub-block-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -26,27 +28,28 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
+import SubBlockLink from "@/views/home/HomeProfile/SubBlockLink.vue";
 
 export default defineComponent({
   setup(props) {
-    // console.log("Resume Data: " + props.resumeData);
-    let data = {
+    const data = {
       contentTitle: props.value.contentTitle,
       timeframe: props.value.timeframe,
       subtitle: props.value.subtitle,
       contents: props.value.contents,
       links: props.value.links
     };
-
     return {data};
   },
   props: {
     value: {
       type: [Object],
       required: true
-    },
+    }
   },
-  components: {}
+  components: {
+    SubBlockLink
+  }
 });
 </script>
 
@@ -75,7 +78,6 @@ export default defineComponent({
 
 .links {
   text-align: justify;
-  //margin-bottom: 0.5rem;
 }
 
 ul {

@@ -52,8 +52,14 @@
         "Cleaned the data and used the JS third-party library (echarts.js) to draw different types of charts on the data to provide data basis for information search"
       ],
       "links": [
-        "https://covid-19-au.com/",
-        "https://github.com/covid-19-au/covid-19-au.github.io"
+        {
+          "linkTitle": "",
+          "link": "https://covid-19-au.com/"
+        },
+        {
+          "linkTitle": "github/covid-19-au",
+          "link": "https://github.com/covid-19-au/covid-19-au.github.io"
+        }
       ]
     }
   ],
@@ -93,7 +99,10 @@
         "Credential ID: CSCO14419732"
       ],
       "links": [
-        "https://www.credly.com/badges/02156c19-2ce7-4d82-a71f-5d2d9dc37442/public_url"
+        {
+          "linkTitle": "CyberOps",
+          "link": "https://www.credly.com/badges/02156c19-2ce7-4d82-a71f-5d2d9dc37442/public_url"
+        }
       ]
     },
     {
@@ -104,7 +113,30 @@
         "Credential ID: UC-ad22c0e2-e670-46b1-ac01-cfa088b53453"
       ],
       "links": [
-        "https://www.udemy.com/certificate/UC-ad22c0e2-e670-46b1-ac01-cfa088b53453/"
+        {
+          "linkTitle": "",
+          "link": "https://www.udemy.com/certificate/UC-ad22c0e2-e670-46b1-ac01-cfa088b53453/"
+        }
+      ]
+    },
+    {
+      "contentTitle": "Security Code Review Ninja",
+      "subtitle": "OWASP.org",
+      "links": [
+        {
+          "linkTitle": "Security Code Review Ninja",
+          "link": "https://securecodingdojo.owasp.org/public/badge/eyJiYWRnZUluZm8iOnsibGluZTEiOiJTZWN1cml0eSIsImxpbmUyIjoiQ29kZSBSZXZpZXciLCJsaW5lMyI6Ik5pbmphIiwiYmciOiJwdXJwbGUifSwiZ2l2ZW5OYW1lIjoiQm94IiwiZmFtaWx5TmFtZSI6Ikx1IiwiY29tcGxldGlvbiI6IldlZCBGZWIgMTUgMjAyMyAwMjoyMzo1OSBHTVQrMDAwMCAoQ29vcmRpbmF0ZWQgVW5pdmVyc2FsIFRpbWUpIiwiaWRIYXNoIjoiN2IxYmM5MjZlNCJ9.%2B%2Bc9eVIbbWyFRE%2BIvDjHWyd3KO8NxxFxLd%2B0nQGTTpE%3D"
+        }
+      ]
+    },
+    {
+      "contentTitle": "Secure Coding Black Belt",
+      "subtitle": "OWASP.org",
+      "links": [
+        {
+          "linkTitle": "Secure Coding Black Belt",
+          "link": "https://securecodingdojo.owasp.org/public/badge/eyJiYWRnZUluZm8iOnsibGluZTEiOiJTZWN1cmUgQ29kaW5nIiwibGluZTIiOiJCbGFjayBCZWx0IiwibGluZTMiOiIiLCJiZyI6ImJsYWNrIn0sImdpdmVuTmFtZSI6IkJveCIsImZhbWlseU5hbWUiOiJMdSIsImNvbXBsZXRpb24iOiJXZWQgRmViIDE1IDIwMjMgMDU6NTQ6NDkgR01UKzAwMDAgKENvb3JkaW5hdGVkIFVuaXZlcnNhbCBUaW1lKSIsImlkSGFzaCI6IjdiMWJjOTI2ZTQifQ%3D%3D.1DxHEHwkzrEOJJIWRMpyhLpJzNI78ceGfFQgh3adJi8%3D"
+        }
       ]
     },
     {

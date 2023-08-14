@@ -49,7 +49,6 @@ import {defineComponent} from "vue";
 import HomeSummary from "@/views/home/HomeProfile/HomeSummary.vue";
 import ProfileLinks from "./HomeProfile/ProfileLinks.vue";
 import HomeInfoBlock from "./HomeProfile/HomeInfoBlock.vue";
-import InfoBlockContent from "@/views/home/HomeProfile/InfoBlockContent.vue";
 
 // import {start} from "./dataParser";
 import {default as resumeData} from "./data.json";
@@ -71,8 +70,7 @@ export default defineComponent({
   components: {
     HomeSummary,
     ProfileLinks,
-    HomeInfoBlock,
-    InfoBlockContent,
+    HomeInfoBlock
   }
 });
 </script>
@@ -81,10 +79,5 @@ export default defineComponent({
 p {
   margin: 0;
   padding: 0;
-}
-
-.summaryList {
-  margin: 0.2rem auto;
-  list-style-type: none;
 }
 </style>
