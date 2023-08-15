@@ -1,7 +1,10 @@
 # BoxHezi
 
 Box Hezi's personal website.
-Published on Netlify: https://boxhezi.netlify.app
+
+Hosted on:
+  - github pages: https://boxhezi.github.io
+  - personal site: https://boxhezi.space
 
 ## To run locally
 1. `clone to repo`
