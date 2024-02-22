@@ -4,14 +4,14 @@
       <home-summary>
         <template v-slot:name><p>Boxuan Lu</p></template>
         <template v-slot:vocation
-        ><p>Information Security Engineer | Full Stack Developer</p></template
+          ><p>Information Security Engineer | Full Stack Developer</p></template
         >
         <template v-slot:location><p>Melbourne, Australia</p></template>
 
         <template v-slot:links>
           <profile-links link="https://github.com/BoxHezi">
             <template v-slot:icon>
-              <font-awesome-icon icon="fa-brands fa-github"/>
+              <font-awesome-icon icon="fa-brands fa-github" />
             </template>
             <template v-slot:text> boxhezi |</template>
           </profile-links>
@@ -25,7 +25,7 @@
 
           <profile-links link="https://www.linkedin.com/in/boxuan-lu/">
             <template v-slot:icon>
-              <font-awesome-icon icon="fa-brands fa-linkedin"/>
+              <font-awesome-icon icon="fa-brands fa-linkedin" />
             </template>
             <template v-slot:text>Boxuan Lu</template>
           </profile-links>
@@ -33,46 +33,26 @@
       </home-summary>
     </div>
 
-    <div v-for="(value, key) in resumeData">
-      <home-info-block :title="key" :values="value" :key="key"></home-info-block>
+    <div v-for="(value, key) in resumeData" :key="key">
+      <home-info-block
+        :title="key"
+        :values="value"
+        :key="key"
+      ></home-info-block>
       <!--      {{ key }}: {{ value }}-->
     </div>
 
     <!--    <div id="home-info-block"></div>-->
-
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
-
+<script lang="ts" setup>
 import HomeSummary from "@/views/home/HomeProfile/HomeSummary.vue";
 import ProfileLinks from "./HomeProfile/ProfileLinks.vue";
 import HomeInfoBlock from "./HomeProfile/HomeInfoBlock.vue";
 
 // import {start} from "./dataParser";
-import {default as resumeData} from "./data.json";
-
-export default defineComponent({
-  setup() {
-    // onMounted(() => {
-    //   start();
-    // });
-    return {
-      resumeData
-    };
-  },
-  props: {
-    title: {
-      type: String,
-    }
-  },
-  components: {
-    HomeSummary,
-    ProfileLinks,
-    HomeInfoBlock
-  }
-});
+import { default as resumeData } from "./data.json";
 </script>
 
 <style scoped>

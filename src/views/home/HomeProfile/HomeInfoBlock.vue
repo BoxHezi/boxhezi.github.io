@@ -2,43 +2,33 @@
   <div>
     <div class="block-title">
       <div>{{ data.title }}</div>
-      <hr/>
+      <hr />
     </div>
-    <div v-for="value in data.values">
+    <div v-for="value in data.values" :key="value">
       <home-info-sub-block :value="value"></home-info-sub-block>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
+<script lang="ts" setup>
 import HomeInfoSubBlock from "@/views/home/HomeProfile/HomeInfoSubBlock.vue";
 
-export default defineComponent({
-  setup(props) {
-    let myTitle = props.title;
-    if (typeof props.title === "string") {
-      myTitle = props.title[0].toUpperCase() + props.title.slice(1);
-    }
-    const data = {
-      title: myTitle,
-      values: props.values
-    }
-    return {data}
+const props = defineProps({
+  title: {
+    type: [String, Number],
+    required: true,
   },
-  props: {
-    title: {
-      type: [String, Number],
-      required: true
-    },
-    values: {
-      type: [Array, Object],
-    }
-  },
-  components: {
-    HomeInfoSubBlock
-  }
+  values: [Array, Object],
 });
+
+let myTitle = props.title;
+if (typeof props.title === "string") {
+  myTitle = props.title[0].toUpperCase() + props.title.slice(1);
+}
+const data = {
+  title: myTitle,
+  values: props.values,
+};
 </script>
 
 <style scoped>

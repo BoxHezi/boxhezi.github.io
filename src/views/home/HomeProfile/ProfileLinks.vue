@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a :href="link" target="_blank">
+    <a :href="data.link" target="_blank">
       <div class="content">
         <span class="icon"><slot name="icon"></slot></span
         ><span><slot name="text"></slot></span>
@@ -9,17 +9,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  props: {
-    link: {
-      type: String,
-      default: null,
-    },
+<script lang="ts" setup>
+const props = defineProps({
+  link: {
+    type: String,
+    default: null,
   },
 });
+
+const data = {
+  link: props.link,
+};
 </script>
 
 <style scoped>

@@ -1,33 +1,23 @@
 <template>
-  <a :href="value.link" target="_blank">
-    <font-awesome-icon icon="fa-solid fa-link"/>
-    <span v-if="value.linkTitle !== ''">{{ value.linkTitle }}</span>
-    <span v-else>{{ value.link }} </span>
+  <a :href="data.link" target="_blank">
+    <font-awesome-icon icon="fa-solid fa-link" />
+    <span v-if="data.linkTitle !== ''">{{ data.linkTitle }}</span>
+    <span v-else>{{ data.link }} </span>
   </a>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
+<script lang="ts" setup>
+const props = defineProps({
+  linkData: {
+    type: [Object],
+    required: true,
+  },
+});
 
-export default defineComponent({
-    setup(props) {
-      let value = {
-        linkTitle: props.linkData?.linkTitle,
-        link: props.linkData?.link
-      };
-      return {value};
-    },
-    props: {
-      linkData: {
-        type: [Object],
-        require: true
-      }
-    }
-  }
-);
-
+const data = {
+  linkTitle: props.linkData?.linkTitle,
+  link: props.linkData?.link,
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -13,12 +13,12 @@
     </div>
     <div class="contents" v-if="data.contents !== undefined">
       <ul>
-        <li v-for="item in data.contents">{{ item }}</li>
+        <li v-for="item in data.contents" :key="item">{{ item }}</li>
       </ul>
     </div>
     <div class="links" v-if="data.links !== undefined">
       <ul>
-        <li v-for="link in data.links">
+        <li v-for="link in data.links" :key="link">
           <sub-block-link :linkData="link"></sub-block-link>
         </li>
       </ul>
@@ -26,31 +26,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
+<script lang="ts" setup>
 import SubBlockLink from "@/views/home/HomeProfile/SubBlockLink.vue";
 
-export default defineComponent({
-  setup(props) {
-    const data = {
-      contentTitle: props.value.contentTitle,
-      timeframe: props.value.timeframe,
-      subtitle: props.value.subtitle,
-      contents: props.value.contents,
-      links: props.value.links
-    };
-    return {data};
-  },
-  props: {
-    value: {
-      type: [Object],
-      required: true
-    }
-  },
-  components: {
-    SubBlockLink
-  }
-});
+const props = defineProps({
+  value: {type: Object, required: true}
+})
+
+const data = {
+  contentTitle: props.value.contentTitle,
+  timeframe: props.value.timeframe,
+  subtitle: props.value.subtitle,
+  contents: props.value.contents,
+  links: props.value.links
+}
 </script>
 
 <style scoped>
