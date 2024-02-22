@@ -6,33 +6,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, onMounted } from "vue";
+<script lang="ts" setup>
+import { onMounted } from "vue";
 import MainNavBar from "./components/navbar/MainNavBar.vue";
-import Home from "./views/home/Home.vue";
 
 import { initAnimation as init } from "./Background";
 
-export default defineComponent({
-  name: "App",
-  components: {
-    Home,
-    MainNavBar,
-  },
-  setup() {
-    onMounted(() => {
-      // set a timeout in order to ensure html max height can be obtained
-      setTimeout(() => {
-        const width = window.innerWidth; // dynamically get window height
-        const html = document.querySelector("html");
-        const height =
-          Math.max(html!.clientHeight, html!.scrollHeight, html!.offsetHeight) +
-          20; // get html element's height
-
-        init(width, height);
-      }, 50);
-    });
-  },
+onMounted(() => {
+  // using setTimeout to ensure that the DOM has been rendered and then invoke init function
+  setTimeout(() => {
+    const html = document.querySelector("html");
+    const width = window.innerWidth;
+    const height =
+      Math.max(html!.clientHeight, html!.scrollHeight, html!.offsetHeight) + 20;
+    init(width, height);
+  });
 });
 </script>
 

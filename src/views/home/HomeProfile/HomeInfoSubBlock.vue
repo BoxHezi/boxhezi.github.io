@@ -30,16 +30,16 @@
 import SubBlockLink from "@/views/home/HomeProfile/SubBlockLink.vue";
 
 const props = defineProps({
-  value: {type: Object, required: true}
-})
+  value: { type: Object, required: true },
+});
 
 const data = {
   contentTitle: props.value.contentTitle,
   timeframe: props.value.timeframe,
   subtitle: props.value.subtitle,
   contents: props.value.contents,
-  links: props.value.links
-}
+  links: props.value.links,
+};
 </script>
 
 <style scoped>
@@ -81,5 +81,4 @@ a {
 a:hover {
   color: #c0c0c0;
 }
-
 </style>
