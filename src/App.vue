@@ -17,10 +17,9 @@ onMounted(() => {
   setTimeout(() => {
     const html = document.querySelector("html");
     const width = window.innerWidth;
-    const height =
-      Math.max(html!.clientHeight, html!.scrollHeight, html!.offsetHeight) + 20;
+    const height = html!.scrollHeight + 20
     init(width, height);
-  });
+  }, 10);
 });
 </script>
 
