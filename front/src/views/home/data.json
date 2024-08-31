@@ -61,6 +61,26 @@
           "link": "https://github.com/covid-19-au/covid-19-au.github.io"
         }
       ]
+    },
+    {
+      "contentTitle": "ip2vulns",
+      "subtitle": "An Ip to Vulnerabilities utils",
+      "links": [
+        {
+          "linkTitle": "ip2vulns",
+          "link": "https://github.com/BoxHezi/ip2vulns"
+        }
+      ]
+    },
+    {
+      "contentTitle": "go-cvedict",
+      "subtitle": "Local CVE database writen in Go, use nvd.nist.gov as source",
+      "links": [
+        {
+          "linkTitle": "go-cvedict",
+          "link": "https://github.com/BoxHezi/go-cvedict"
+        }
+      ]
     }
   ],
   "education": [

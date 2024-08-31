@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "serve": "node app.js"
+  },
+	"dependencies": {
+		"express": "^4.19.2",
+		"mongodb": "^6.8.0",
+		"morgan": "^1.10.0"
+	}
+}
