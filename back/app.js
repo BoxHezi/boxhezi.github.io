@@ -1,8 +1,8 @@
-const express = require("express");
-const cors = require("cors");
-const morgan = require("morgan");
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
 
-const { getData } = require("./mongo");
+import { getData } from "./mongo.js";
 
 const app = express();
 const port = 3000;
@@ -29,11 +29,12 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+const reverseOrderList = ["education", "experience"];
 app.get("/api/:endpoint", (req, res) => {
   const params = req.params;
   getData(
     params.endpoint,
-    params.endpoint === "education" || params.endpoint === "experience"
+    reverseOrderList.includes(params.endpoint)
   ).then((result) => {
     res.json(result);
   });

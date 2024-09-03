@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+import { MongoClient } from "mongodb";
 
 const url = "mongodb://localhost:27017";
 const dbName = "boxhezi";
@@ -32,6 +32,4 @@ const getData = async (endpoint, reverseOrder = false) => {
   return result;
 };
 
-module.exports = {
-  getData,
-};
+export { getData };
