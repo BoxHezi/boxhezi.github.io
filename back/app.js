@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const morgan = require("morgan");
 
 const { getData } = require("./mongo");
@@ -8,6 +9,7 @@ const port = 3000;
 
 // middleware
 app.use(express.json());
+app.use(cors());
 // app.use(morgan('dev'))
 morgan.token("status-colored", (req, res) => {
   const status = res.statusCode;

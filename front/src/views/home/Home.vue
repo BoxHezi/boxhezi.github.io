@@ -33,26 +33,44 @@
       </home-summary>
     </div>
 
-    <div v-for="(value, key) in resumeData" :key="key">
-      <home-info-block
-        :title="key"
-        :values="value"
-        :key="key"
-      ></home-info-block>
-      <!--      {{ key }}: {{ value }}-->
-    </div>
+    <!-- <suspense>
+      <div v-for="(value, key) in resumeData" :key="key">
+        <home-info-block
+          :title="key"
+          :key="key"
+        ></home-info-block> -->
+    <!--      {{ key }}: {{ value }}-->
+    <!-- </div>
+    </suspense> -->
+
+    <suspense>
+      <div>
+        <home-info-block
+          :title="summaryKey"
+          :key="summaryKey"
+        ></home-info-block>
+      </div>
+    </suspense>
+
+    <suspense>
+      <div v-for="value in resumeDataKey" :key="value">
+        <home-info-block :title="value" :key="value"></home-info-block>
+        <!--      {{ key }}: {{ value }}-->
+      </div>
+    </suspense>
 
     <!--    <div id="home-info-block"></div>-->
   </div>
 </template>
 
 <script lang="ts" setup>
-import HomeSummary from "@/views/home/HomeProfile/HomeSummary.vue";
+import HomeSummary from "./HomeProfile/HomeSummary.vue";
 import ProfileLinks from "./HomeProfile/ProfileLinks.vue";
 import HomeInfoBlock from "./HomeProfile/HomeInfoBlock.vue";
 
-// import {start} from "./dataParser";
-import { default as resumeData } from "./data.json";
+// import { default as resumeData } from "./data.json";
+const summaryKey = "summary";
+const resumeDataKey = ["experience", "project", "education", "certification"];
 </script>
 
 <style scoped>

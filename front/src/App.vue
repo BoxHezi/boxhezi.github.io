@@ -12,15 +12,15 @@ import MainNavBar from "./components/navbar/MainNavBar.vue";
 
 import { initAnimation as init } from "./Background";
 
-onMounted(() => {
-  // using setTimeout to ensure that the DOM has been rendered and then invoke init function
-  setTimeout(() => {
-    const html = document.querySelector("html");
-    const width = window.innerWidth;
-    const height = html!.scrollHeight + 20
-    init(width, height);
-  }, 10);
-});
+// onMounted(() => {
+//   // using setTimeout to ensure that the DOM has been rendered and then invoke init function
+//   setTimeout(() => {
+//     const html = document.querySelector("html");
+//     const width = window.innerWidth;
+//     const height = html!.scrollHeight + 20
+//     init(width, height);
+//   }, 10);
+// });
 </script>
 
 <style>
