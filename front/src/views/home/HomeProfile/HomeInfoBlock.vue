@@ -27,6 +27,7 @@ let myTitle = props.title;
 if (typeof props.title === "string") {
   myTitle = props.title[0].toUpperCase() + props.title.slice(1);
 }
+
 const data = {
   title: myTitle,
   values: props.values,
