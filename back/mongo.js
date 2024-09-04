@@ -1,6 +1,7 @@
 import { MongoClient } from "mongodb";
 
-const url = "mongodb://localhost:27017";
+// const url = "mongodb://localhost:27017";
+const url = "mongodb://boxhezi-db:27017"; // docker
 const dbName = "boxhezi";
 
 const connect = async () => {

@@ -34,7 +34,8 @@ const data = {
 };
 
 // wsl gateway address, TODO: make it dynamic (use a hostname instead of ip)
-const backend_endpoint = "http://172.17.154.168:3000/api/";
+// const backend_endpoint = "http://172.17.154.168:3000/api/";
+const backend_endpoint = "http://localhost/api/"; // docker, nginx configured reverse proxy
 
 const resp = await fetch(backend_endpoint + data.title.toLowerCase());
 const d = await resp.json();

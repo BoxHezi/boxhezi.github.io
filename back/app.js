@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors";
+// import cors from "cors";
 import morgan from "morgan";
 
 import { getData } from "./mongo.js";
@@ -9,7 +9,7 @@ const port = 3000;
 
 // middleware
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 // app.use(morgan('dev'))
 morgan.token("status-colored", (req, res) => {
   const status = res.statusCode;

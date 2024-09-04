@@ -1,0 +1,34 @@
+# version: "3"
+
+services:
+  front:
+    container_name: boxhezi-front
+    build: ./front
+    ports:
+      - "80:80"
+
+  back:
+    container_name: boxhezi-back
+    build: ./back
+    # ports:
+    #   - "3000:3000"
+    expose:
+      - "3000"
+    volumes:
+      - ./back:/app
+    depends_on:
+      - db
+    command: ["node", "/app/app.js"]
+
+  db:
+    container_name: boxhezi-db
+    image: mongo
+    expose:
+      - "27017"
+    # ports:
+    #   - "27017:27017"
+    volumes:
+      - mongo-data:/mongodata
+
+volumes:
+  mongo-data:
