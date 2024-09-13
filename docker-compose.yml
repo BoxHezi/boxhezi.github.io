@@ -18,6 +18,9 @@ services:
       - ./back:/app
     depends_on:
       - db
+    environment:
+      - MONGODB_URL=mongodb://boxhezi-db:27017
+      - MONGODB_NAME=admin
     command: ["node", "/app/app.js"]
 
   db:
@@ -28,7 +31,7 @@ services:
     # ports:
     #   - "27017:27017"
     volumes:
-      - mongo-data:/data
+      - mongo-data:/data/db
 
 volumes:
   mongo-data:

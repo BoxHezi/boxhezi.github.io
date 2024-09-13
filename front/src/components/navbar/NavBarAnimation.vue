@@ -1,8 +1,6 @@
 <template>
   <div>
     <p id="full-command">
-      <!-- <span class="prefix" v-if="!rootUser"> {{ prefix }}</span>
-      <span class="prefix" v-else> {{ rootPrefix }}</span> -->
       <span class="prefix">{{ prefix }}</span>
       <span class="command">{{ displayCommand }}|</span>
     </p>
@@ -13,7 +11,6 @@
 import { ref, onMounted } from "vue";
 
 const prefix: string = "boxhezi@localhost ~$ ";
-// const rootPrefix: string = "root@localhost /home/boxhezi # ";
 const commands: Array<String> = [
   "cat /etc/passwd",
   "cat /etc/shadow",

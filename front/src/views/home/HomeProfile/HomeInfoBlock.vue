@@ -33,17 +33,17 @@ const data = {
   values: props.values,
 };
 
-// wsl gateway address, TODO: make it dynamic (use a hostname instead of ip)
-// const backend_endpoint = "http://172.17.154.168:3000/api/";
-const backend_endpoint = "http://localhost/api/"; // docker, nginx configured reverse proxy
+const BACKEND_ENDPOINT =
+  process.env.VUE_APP_BACKEND_ENDPOINT || "http://172.17.154.168:3000/api/";
+// console.log(BACKEND_ENDPOINT);
 
-const resp = await fetch(backend_endpoint + data.title.toLowerCase());
+const resp = await fetch(BACKEND_ENDPOINT + data.title.toLowerCase());
 const d = await resp.json();
 </script>
 
 <style scoped>
 div {
-  background-color: #2D2D2D;
+  background-color: #2d2d2d;
   border-radius: 0.5em;
   padding: 0 0.1rem;
   margin: 0 0.1rem;
