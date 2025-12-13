@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onMounted} from "vue";
+import { defineComponent, ref, onMounted } from "vue";
 
 export default defineComponent({
   setup() {
@@ -17,7 +17,7 @@ export default defineComponent({
 
     const prefix: string = "boxhezi@localhost ~$ ";
     const rootPrefix: string = "root@localhost /home/boxhezi # ";
-    const commands: Array<String> = [
+    const commands: string[] = [
       "cat /etc/passwd",
       "cat /etc/shadow",
       "sudo -l",
@@ -28,7 +28,7 @@ export default defineComponent({
     const timeout: number = 100;
 
     let currentCommand = commands[0];
-    let displayCommand = ref("");
+    const displayCommand: any = ref("");
     let charIndex: number = 0;
     let deleting: boolean = false;
 
@@ -42,7 +42,7 @@ export default defineComponent({
       return nextIndex >= commandCount ? 0 : nextIndex;
     }
 
-    function typing(cmd: String) {
+    function typing(cmd: string) {
       if (!deleting) {
         if (charIndex <= cmd.length) {
           displayCommand.value = cmd.slice(0, charIndex++);
