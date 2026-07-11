@@ -7,31 +7,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, onUnmounted } from "vue";
 import MainNavBar from "./components/navbar/MainNavBar.vue";
-import Home from "./views/home/Home.vue";
-
-import { initAnimation as init } from "./Background";
+import { initAnimation } from "./Background";
 
 export default defineComponent({
   name: "App",
-  components: {
-    Home,
-    MainNavBar,
-  },
+  components: { MainNavBar },
   setup() {
-    onMounted(() => {
-      // set a timeout in order to ensure html max height can be obtained
-      setTimeout(() => {
-        const width = window.innerWidth; // dynamically get window height
-        const html = document.querySelector("html");
-        const height =
-          Math.max(html!.clientHeight, html!.scrollHeight, html!.offsetHeight) +
-          20; // get html element's height
+    let cleanup: (() => void) | undefined;
 
-        init(width, height);
-      }, 50);
+    onMounted(() => {
+      const canvas = document.getElementById(
+        "background-canvas"
+      ) as HTMLCanvasElement | null;
+      if (canvas) cleanup = initAnimation(canvas);
     });
+
+    onUnmounted(() => cleanup?.());
   },
 });
 </script>
@@ -39,16 +32,14 @@ export default defineComponent({
 <style>
 @import "assets/css/base.css";
 
-canvas {
-  margin: 0 auto;
-  /* text-align: left; */
-  z-index: -100;
-  /* display: block; */
-  /* background-color: #000000; */
-  position: absolute;
-  left: 0;
+#background-canvas {
+  position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  pointer-events: none;
 }
 
 .container {

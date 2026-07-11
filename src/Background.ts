@@ -1,52 +1,67 @@
-function defineCanvas(width: number, height: number) {
-  const canvas = document.querySelector("canvas")!;
+export function initAnimation(canvas: HTMLCanvasElement, interval = 50) {
+  const ctx = canvas.getContext("2d")!;
+  let animationId: number;
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  let lastDrawTime = 0;
 
-  canvas!.width = width;
-  canvas!.height = height;
-
-  return canvas!;
-}
-
-export function initAnimation(width: number, height: number) {
-  const canvas = defineCanvas(width, height);
-
-  // get all ascii printable
   const letters: string[] = [];
-  for (let i: number = 32; i < 127; i++) {
+  for (let i = 32; i < 127; i++) {
     letters.push(String.fromCharCode(i));
   }
 
-  const size: number = 20;
-  const columns: number = canvas!.width / size; // calculate columns if canvas is not null
-
+  const size = 14;
+  let columns = 0;
   let drops: number[] = [];
-  for (let i: number = 0; i < columns; i++) {
-    // initialize the starting position for each column
+
+  function resetDrops() {
+    columns = Math.floor(canvas.width / size);
+    drops = [];
     const offset = 100;
-    const random: number = Math.floor(Math.random() * offset);
-    drops[i] = random - offset;
-  }
-
-  setInterval(() => {
-    draw(letters, drops, canvas, size);
-  }, 50);
-}
-
-function draw(letters: string[], drops: number[], canvas: any, size: number) {
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  for (let i: number = 0; i < drops.length; i++) {
-    const text: string = letters[Math.floor(Math.random() * letters.length)]; // display random character from letters
-    ctx.fillStyle = "#00ff00";
-    // ctx.font = "20px sans-serif";
-    ctx.fillText(text, i * size, drops[i] * size);
-    drops[i]++;
-    if (drops[i] * size > canvas.height && Math.random() > 0.95) {
-      drops[i] = 0;
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.floor(Math.random() * offset) - offset;
     }
   }
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    resetDrops();
+  }
+
+  function draw(now: number) {
+    animationId = requestAnimationFrame(draw);
+    if (now - lastDrawTime < interval) return;
+    lastDrawTime = now;
+
+    ctx.font = `${size}px monospace`;
+    ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff00";
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * size, drops[i] * size);
+      drops[i]++;
+      if (drops[i] * size > canvas.height && Math.random() > 0.95) {
+        drops[i] = 0;
+      }
+    }
+  }
+
+  resize();
+  requestAnimationFrame(draw);
+
+  function onResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(resize, 100);
+  }
+  window.addEventListener("resize", onResize);
+
+  return function stop() {
+    cancelAnimationFrame(animationId);
+    clearTimeout(resizeTimeout);
+    window.removeEventListener("resize", onResize);
+  };
 }
 
 /**
