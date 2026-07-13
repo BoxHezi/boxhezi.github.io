@@ -12,6 +12,17 @@
   "experience": [
     {
       "contentTitle": "Information Security Engineer",
+      "subtitle": "Huawei Technologies Co., Ltd",
+      "timeframe": "Dec 2025 - Present",
+      "contents": [
+        "Participated in Huawei's MetaERP information security analysis, including code audit, vulnerability scanning, and penetration testing.",
+        "Build and maintain security scripts/tools, rapidly adapted to internal security requirements and security testing processes.",
+        "Give presentations to other internal development teams in order to raise awareness of security issues and provide guidance on secure coding practices.",
+        "Participated in Huawei's internal CTF competition."
+      ]
+    },
+    {
+      "contentTitle": "Information Security Engineer",
       "subtitle": "Zhejiang University NGICS Platform",
       "timeframe": "Jan 2022 - Arp 2023",
       "contents": [
@@ -42,6 +53,26 @@
     }
   ],
   "project": [
+    {
+      "contentTitle": "ip2vulns",
+      "subtitle": "Dev & Maintainer",
+      "timeframe": "May 2023 - Present",
+      "contents": [
+        "Intergrate with Shodan Internet DB API to quickly obtain target information, including open ports, services, and vulnerabilities.",
+        "Support different output formats, including JSON, CSV.",
+        "Support filtering based on CVSS score, quickly identify high-risk vulnerabilities and prioritize remediation efforts."
+      ]
+    },
+    {
+      "contentTitle": "go-cvedict",
+      "subtitle": "Dev & Maintainer",
+      "timeframe": "Aug 2023 - Present",
+      "contents": [
+        "Developed a Go-based tool for managing and querying CVE (Common Vulnerabilities and Exposures) data.",
+        "Integrated with the NVD (National Vulnerability Database) API to fetch the latest CVE information.",
+        "Support both a simple CLI interface and REST API for users to search and filter CVEs based on various criteria."
+      ]
+    },
     {
       "contentTitle": "Covid-19 Tracking Website for Australia",
       "subtitle": "Front-end Dev",
