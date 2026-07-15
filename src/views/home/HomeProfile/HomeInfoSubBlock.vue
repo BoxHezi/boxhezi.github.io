@@ -58,11 +58,28 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .contentTitle {
   font-size: 1.2rem;
   margin-top: 0.5rem;
+}
+
+.timeframe {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .contentTitle {
+    font-size: 1rem;
+  }
+
+  .timeframe {
+    font-size: 0.8rem;
+  }
 }
 
 .subtitle {

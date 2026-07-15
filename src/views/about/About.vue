@@ -25,4 +25,10 @@ export default defineComponent({
   width: 85%;
   background: var(--background);
 }
+
+@media (max-width: 768px) {
+  #about {
+    width: 95%;
+  }
+}
 </style>

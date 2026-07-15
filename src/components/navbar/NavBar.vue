@@ -19,6 +19,15 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  #nav-bar {
+    height: auto;
+    min-height: 3rem;
+    padding: 0.5rem 0;
+  }
 }
 </style>

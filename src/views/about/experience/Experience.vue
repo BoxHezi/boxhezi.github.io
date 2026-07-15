@@ -118,4 +118,18 @@ export default defineComponent({
   flex: 1;
   padding-left: 5px;
 }
+
+@media (max-width: 768px) {
+  #introduction {
+    flex-direction: column;
+  }
+
+  #experience {
+    flex-direction: column;
+  }
+
+  #projects {
+    flex-direction: column;
+  }
+}
 </style>

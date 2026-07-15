@@ -46,4 +46,10 @@ export default defineComponent({
   width: 70%;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
 </style>

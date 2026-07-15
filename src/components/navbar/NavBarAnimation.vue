@@ -23,7 +23,7 @@ export default defineComponent({
       "sudo -l",
       "sudo nmap -A localhost -p- -v",
       "nc -lvnp 4444",
-      "msfconsole",
+      "msfconsole -q",
     ];
     const timeout: number = 100;
 
@@ -87,9 +87,19 @@ export default defineComponent({
 #full-command {
   display: flex;
   font-family: "Courier New", Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0;
 }
 
 .command {
   padding-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  #full-command {
+    font-size: 0.85rem;
+  }
 }
 </style>
